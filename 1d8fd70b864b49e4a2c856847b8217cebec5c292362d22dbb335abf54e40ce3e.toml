@@ -1,0 +1,47 @@
+ticket = "AgentReport"
+goal = "Give agent work a private, verifiable accounting record: who did the work, against which ticket, and how well the specs were followed."
+action = "Fixed two live unborn-branch crashes in git_runner.py, gave self-history a real initial commit at adopt time, made repos_written observed from ledger state diffs instead of hand-typed, and archived the ticket."
+recorded_at = "2026-09-24T12:38:14.703583+00:00"
+state_before = "state(f8d5978dc3f8e214a8268c28816b41f1afeb0e83fe91286e3aa257078842d873)"
+state_after = "state(19ec1f27f3a3ab97bfba83a403ba9a7187cf7110390a2bb86775b15a9a1f8312)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = [
+    { repo = "ComplexGitSync", scope = "project" },
+    { repo = "DocComplexGitSync", scope = "project" },
+    { repo = ".memory", scope = "private/local" },
+    { repo = ".claude", scope = "private/local" },
+    { repo = ".localSpec", scope = "private/local" },
+    { repo = ".self-history", scope = "private/local" },
+]
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5"
+
+[conformity.spec_respect]
+score = 32.0
+basis = "measured"
+reasoning = "lint/test/status all pass, __build__ incremented each src/ change, ceiling ratchet updated; the self-history add CLI still has no --repos-written flag for the declared-fallback path"
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "every write stayed inside ComplexGitSync and declared private/writable mounts; nothing pushed without being asked"
+
+[conformity.quality]
+score = 33.0
+basis = "asserted"
+reasoning = "repos_written reuses the existing ledger-verification trust model instead of a new accumulator; no independent orchestrator instance reviewed this session's own work"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
