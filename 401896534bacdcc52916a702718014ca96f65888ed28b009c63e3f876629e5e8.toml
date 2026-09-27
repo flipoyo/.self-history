@@ -1,0 +1,40 @@
+ticket = "MergeLogGap"
+goal = "A refused merge left no log on disk, so autofix answered 'no failing command found' right after a merge visibly failed; plain merge also never wrote a State."
+action = "Quoted the worker's WP1-WP4 implementation against CLAUDE.md's before-committing checklist, re-ran lint/test/status/check-ceilings, proved the new log-persistence tests fail against neutered ensure_log_file, audited the ceiling baseline diff, and bumped 3.1.9 to 3.2.0."
+recorded_at = "2026-09-27T20:28:17.128118+00:00"
+state_before = ""
+state_after = "state(06dbe2b3cfff2803719d049565638150e315e5843023758b19ea478f35e9beee)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Opus"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Opus 5"
+
+[conformity.spec_respect]
+score = 28.0
+basis = "asserted"
+reasoning = "Checklist items 1-4,6,7 pass; README and docs/Text/user_guide.tex still show the superseded merge-refusal message, and three new files cite the ticket by its openTickets path."
+
+[conformity.gating]
+score = 31.0
+basis = "asserted"
+reasoning = "No private content reached the public repo; ticket citations are paths in docstrings, which is established practice here."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Tests are real (proved by neutering ensure_log_file); one into_branch assertion is conditional and some internal comments in repair_merge_conflict.py describe a message form that no longer exists."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
