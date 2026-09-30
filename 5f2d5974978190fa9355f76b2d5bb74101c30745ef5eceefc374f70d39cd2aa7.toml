@@ -1,0 +1,40 @@
+ticket = "DefaultUserMemory"
+goal = "Give a workspace whose .cgs declares no memory a local, never-published memory at .cgitsync/.memory, created on first recording, with the .cgs always winning."
+action = "Reviewed after the fact: the worker first skipped spawning an orchestrator. Re-ran lint, tests, both ceilings and status, read the diff and the new module and tests against the six acceptance bullets and D1-D4; found self-history adopt and self-history add unguarded on a defaulted memory, and no ledger entry for the defaulting."
+recorded_at = "2026-09-30T17:37:35.024798+00:00"
+state_before = ""
+state_after = "state(e921c94da8beafe8545e3db60342bb2a3f8d77fd1504b9de2d0d5423d63478ff)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 26.0
+basis = "asserted"
+reasoning = "Checklist items met and bump-build done, but D4 is unenforced and WP2's ledger entry is only a run-log event."
+
+[conformity.gating]
+score = 32.0
+basis = "asserted"
+reasoning = "Nothing private copied into public files, no agent credit in the diff, no network call for a defaulted memory."
+
+[conformity.quality]
+score = 26.0
+basis = "asserted"
+reasoning = "Lazy, idempotent, marker-based design is sound and tested; gaps in self-history guarding, misleading refusal messages, and one over-long line in cli/expert.py."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
