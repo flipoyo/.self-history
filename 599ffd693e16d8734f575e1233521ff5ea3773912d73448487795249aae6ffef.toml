@@ -1,0 +1,43 @@
+ticket = "MemoryArchitecture"
+goal = "Closing pass: close the memory architecture ticket on the owner's word, move its reference role into the specs, open the run-logs follow-up, finish the register wording."
+action = "Quoted the closing change: re-ran all gates, checked the new Memory architecture section and the run-logs ticket against the code, checked the archive, renames and every ticket link, grepped for leftovers. Kept no version bump."
+recorded_at = "2026-09-30T19:28:40.270018+00:00"
+state_before = ""
+state_after = "state(ee25fa93ab5c7c06e866376e88b45879784ded0e2590bd65632d1fc215285e92)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "Total 96 of 100 is the plain sum 31+33+32. Spec respect: 33 less 2 because StateLocking still links to the archived WorkingTransitionState under its old open name and AutofixBlindSpot links to AgentConduct.md one directory short; both predate this pass but the pass edited StateLocking and left them. Gating: full 33, all checks re-run and measured clean. Quality: 34 less 2 for test_verify_command.py line 186, still named for an unstarted register after its twin in test_cli_expert.py was renamed."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Archive stamp, branch-prefix drop and rank compaction follow the ticket lifecycle; two open tickets still carry broken links."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Lint, 1841 tests, spec tree, both ceilings and status errors=0 re-run clean; build counter bumped; PDFs rebuilt."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Section claims match the code (fold list, fold-before-push, toolchain cache, autofix log path); one more test still named for a register."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
