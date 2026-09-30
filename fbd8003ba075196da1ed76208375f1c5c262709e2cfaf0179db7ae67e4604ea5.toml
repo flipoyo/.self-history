@@ -1,0 +1,43 @@
+ticket = "MemoryArchitecture"
+goal = "Second pass: make the memory vocabulary true everywhere, with no text calling the ledger a register."
+action = "Re-quoted the worker's fixes: re-ran lint, tests, spec tree, both ceilings and status, re-grepped src, tests, specs, docs and README, confirmed the changed verify help line and rebuilt PDFs, kept no version bump as no command, flag, exit code or field changed."
+recorded_at = "2026-09-30T19:05:24.476987+00:00"
+state_before = ""
+state_after = "state(a90fa21bcd5960d0d7e8509644f8e6068112e14ce53d2542f01696c5a139378c)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 95 of 100 is the plain sum 31+33+31. Spec respect: 33 less 2 because a few ambiguous uses remain (user guide line 199, git_tree.py line 1403, a test docstring). Gating: full 33, all checks re-run and measured clean. Quality: 34 less 3 for the test named for an unstarted register, the test_ledger_store docstring still saying register persistence, and the exact-match help string change being unchecked by a test of its own."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Every named leftover fixed and the ticket text corrected; a few ambiguous uses remain."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Lint, 1841 tests, spec tree, both ceilings and status errors=0 re-run clean; build counter bumped; PDFs rebuilt."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Wrapped citations and help text fixed cleanly; a test name and two comments still say register for the ledger."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

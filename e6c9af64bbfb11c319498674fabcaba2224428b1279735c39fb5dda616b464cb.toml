@@ -1,0 +1,43 @@
+ticket = "MemoryArchitecture"
+goal = "Make the documentary acceptance of the memory architecture ticket true: fixed vocabulary in the specs, no source text contradicting it, honest status per decision."
+action = "Quoted the worker's vocabulary section, rename and ticket status blocks: re-ran lint, tests, spec tree, both ceilings and status, checked each status claim against the code, sampled archived milestones, grepped for leftover register wording and found many the ticket says are gone. Chose no version bump. Ticket left open."
+recorded_at = "2026-09-30T18:58:35.804184+00:00"
+state_before = ""
+state_after = "state(a90fa21bcd5960d0d7e8509644f8e6068112e14ce53d2542f01696c5a139378c)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 84 of 100 is the plain sum 25+33+26. Spec respect: 33 less 8 because the ticket says no docstring contradicts the vocabulary and that register now means only the legacy file, yet ledger_store.py, ledger_entry.py, integrity.py, expert.py, memory_commands.py, AdditionalSpecs.md, the user guide and the API guide still use it for the ledger. Gating: full 33, all checks re-run and measured clean. Quality: 34 less 8 for the missed line-wrapped hash-chained register names, a half-edited citation in ledger_entry.py that points at a heading that no longer exists, and a D1 note that leaves out commit logs."
+
+[conformity.spec_respect]
+score = 25.0
+basis = "asserted"
+reasoning = "Vocabulary section and status blocks follow the ticket, but the acceptance item is marked Met while about twenty ledger-meaning uses of register remain."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Lint, 1841 tests, spec tree, both ceilings and status errors=0 all re-run clean; bump-build done."
+
+[conformity.quality]
+score = 26.0
+basis = "asserted"
+reasoning = "Table and D4/D5 claims are true; the rename missed line-wrapped names, left one garbled citation, and D1 status omits commit logs."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
