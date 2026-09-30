@@ -1,0 +1,43 @@
+ticket = "ConformityScale"
+goal = "Explain the conformity score scale and calculation in the docs, always show the maximum, and let the orchestrator explain the calculation."
+action = "Quoted the worker's scale class, stricter record validation, new flag and docs: re-ran lint, tests, spec tree, both ceilings and status, confirmed the six stored records still read and verify clean, grepped for other score printers, chose minor 3.8.0, rebuilt the docs."
+recorded_at = "2026-09-30T18:35:34.643659+00:00"
+state_before = ""
+state_after = "state(38787e1296d2605cda3e646870350e8d4cab0de30a99e955031674a5225bcfb5)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 91 of 100 is the plain sum 29+33+29. Spec respect: 33 less 4 for an unenforced deduct from maximum rule presented as method, a stray blank line, and no ticket trail. Gating: full 33, all measured and clean. Quality: 34 less 5 for stricter read validation, unbounded explanation text and an unchecked bad-score message."
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "33 less 4: the docs say start at maximum and deduct as if a rule but nothing enforces it and they do not say so; a stray double blank line in the spec; no ticket filed or archived for the owner request."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "33, nothing deducted: status shows errors=0 and the change touched only repositories in scope; nothing pushed, no record copied into a public file."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "34 less 5: a stored record with an out-of-range score would now fail to read instead of being shown; the explanation has no length or line limit unlike goal and action; the new error path for a bad score was not checked to print cleanly."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
