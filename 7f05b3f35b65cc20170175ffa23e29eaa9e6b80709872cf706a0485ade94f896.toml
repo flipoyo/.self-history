@@ -1,0 +1,40 @@
+ticket = "ClassFirstPackage"
+goal = "Give every domain concept in the package a class, declare what each module exports, and add checks that keep the package class-first and the command line a mirror of the Python client."
+action = "Quoted the worker's rewrite against the checklist and acceptance: re-ran lint, tests, ceilings, the new shape check, spec tree and status, proved the one failing test also fails without the change, compared every changed test line and confirmed only call and import syntax moved, checked the merged path helpers were identical, then bumped 3.4.0 to 3.5.0, rebuilt the docs, archived the ticket and compacted the priority-1 pile."
+recorded_at = "2026-09-30T10:46:22.165292+00:00"
+state_before = ""
+state_after = "state(6ad75c08696a3451d7942ddb5a3a4112a5e21651df56d0912be28111b16ebfab)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 27.0
+basis = "asserted"
+reasoning = "Worker followed the ticket and the owner's mechanical-rewrite ruling with call-syntax-only test edits, but the CLI mirror test checks reachability only, the bootstrap resolver still creates a directory, the ceiling baseline was regenerated upward, and 12 client methods await the owner."
+
+[conformity.gating]
+score = 32.0
+basis = "asserted"
+reasoning = "No private-scope or writable-scope logic changed, only moved into classes; the ledger now has a single write door; the worker spawned an independent orchestrator unprompted, as the pair rule asks."
+
+[conformity.quality]
+score = 28.0
+basis = "asserted"
+reasoning = "1761 tests pass with test literals unchanged apart from two monkeypatch names, moved code matches the old bodies, all shape lists at zero; marked down for the wrapper-free but stateless static-method classes, a net line-count rise, a stale paths.py docstring and an unbuilt PDF handoff."
+
+[checks]
+lint_passed = true
+tests_passed = false
+status_errors = 0
