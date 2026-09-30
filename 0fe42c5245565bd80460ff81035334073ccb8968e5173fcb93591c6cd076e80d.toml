@@ -1,0 +1,40 @@
+ticket = "DefaultUserMemory"
+goal = "Give a workspace whose spec declares no memory a local, never-published one; this second pass fixes the review findings."
+action = "Worker refused self-history on a local memory, made publish-only refusals precise, tidied status output; ledger entry for defaulting left out on purpose (would change the stored format)."
+recorded_at = "2026-09-30T17:52:43.517172+00:00"
+state_before = ""
+state_after = "state(dc66c2720387411d46e09d2309d4fafda4f188ce80b45877987073fb23491619)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Checklist met and ticket's no-format-change rule kept; one review finding (ledger entry) knowingly left open."
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "No private data copied into public files or the commit message; nothing pushed."
+
+[conformity.quality]
+score = 28.0
+basis = "asserted"
+reasoning = "Three fixes verified by tests and code reading; no new defect found, but the local memory still has no ledger trace of its creation."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
