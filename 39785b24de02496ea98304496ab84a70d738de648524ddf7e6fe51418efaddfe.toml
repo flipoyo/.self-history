@@ -1,0 +1,40 @@
+ticket = "AgentGuardrails"
+goal = "Put the structural and commit rules where a session reads them, and refuse a commit message that breaks the written commit rule before it is committed."
+action = "Quoted the worker's five work packages against the checklist and acceptance, re-ran lint, tests, ceilings, spec tree and status, proved the digest coverage check fails when a spec is uncited and that the one failing test also fails without the change, corrected two digest citations, bumped 3.3.0 to 3.4.0, archived the ticket and compacted the priority-1 pile."
+recorded_at = "2026-09-30T10:03:45.228421+00:00"
+state_before = ""
+state_after = "state(ae6f12b56f3e0b6d7dd6b89a9045a6415d62dbad9c8d293f3b24911df85ab5dd)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 27.0
+basis = "asserted"
+reasoning = "Every criterion met and re-verified, but the worker finished without spawning the independent orchestrator, so the owner had to ask, and two digest lines cited the wrong DOCSTYLE section."
+
+[conformity.gating]
+score = 32.0
+basis = "asserted"
+reasoning = "Nothing private was copied into a public repository and nothing was pushed; no test proves the private commit path is refused, only the shared code path."
+
+[conformity.quality]
+score = 28.0
+basis = "asserted"
+reasoning = "Clean small policy class and thorough tests with a real refusal test that commits nothing; one integration test still fails, unrelated and pre-existing, and the wrong-section citations slipped through."
+
+[checks]
+lint_passed = true
+tests_passed = false
+status_errors = 0
