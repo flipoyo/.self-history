@@ -1,0 +1,40 @@
+ticket = "SpecTreeManifest"
+goal = "Replace the hand-written list of spec files in the spec tree check with one written manifest of every mount under .agent/, checked against the developer spec."
+action = "Quoted the worker's manifest, script and tests against WP1 to WP6 and the acceptance list: re-ran lint, tests, ceilings, spec tree and status, removed a mount and an exemption reason from the manifest to prove the check fails and restored it, grepped for old mount names and found leftovers in the example spec comments, .gitignore and two tests. Chose a patch release 3.7.2, rebuilt the docs, archived the ticket with an honest deviation note."
+recorded_at = "2026-09-30T18:09:27.690161+00:00"
+state_before = ""
+state_after = "state(9cf79c5f0c447fabbbe4a2d937bb44ad10b6caefeb014e3031209fbecec38860)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 27.0
+basis = "asserted"
+reasoning = "Every work package done and the check bites, but old mount names survive in the example spec, .gitignore and two tests, so one acceptance bullet is only met for the specs."
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Nothing private was copied into a public file and nothing was committed or pushed; the worker ran before the orchestrator as required."
+
+[conformity.quality]
+score = 27.0
+basis = "asserted"
+reasoning = "Clean parser with fixture tests for each failure shape; tutorial table columns left misaligned and an empty exemption reason is reported twice."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
