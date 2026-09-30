@@ -1,0 +1,40 @@
+ticket = "InstallFrontier"
+goal = "Make initialise the nested install and bootstrap the standalone one, each refusing the other's job by name, with one branch rule, both .cgs and .gts inputs, and States holding only .gts."
+action = "Quoted the worker's seven work packages against the acceptance list and checklist: re-ran lint, tests, ceilings, spec tree and status, read the installer, loader and spec diffs, checked the help text and the tests named in the ticket, bumped 3.5.1 to 3.6.0, rebuilt all tracked PDFs, archived the ticket and compacted the priority-1 pile."
+recorded_at = "2026-09-30T14:35:33.431706+00:00"
+state_before = ""
+state_after = "state(1d8c2cac0a91821c2d4fcba880773174e73433b7303046372646789eaa7d5e91)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 28.0
+basis = "asserted"
+reasoning = "Every acceptance item matched by evidence in the tree; no adversarial re-run of the new tests against a neutered change."
+
+[conformity.gating]
+score = 32.0
+basis = "asserted"
+reasoning = "No self-history content in any public file; README LLM section unchanged and still accurate."
+
+[conformity.quality]
+score = 28.0
+basis = "asserted"
+reasoning = "Clear design and tests for each decision D1 to D5; one large installer diff read for shape rather than line by line."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
