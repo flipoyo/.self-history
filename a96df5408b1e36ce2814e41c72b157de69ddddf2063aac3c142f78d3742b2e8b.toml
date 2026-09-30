@@ -1,0 +1,43 @@
+ticket = "UserDevProfile"
+goal = "Tell a user tree from a developer tree by whether it holds a private repository, show it in status, and offer a developer tree with no declared memory a memory repository, warning when it cannot ask."
+action = "TreeProfile and WorkingGitTree.profile; profile in status and status --json; MemorySetup and the memory setup command with a terminal-only offer after recording commands; specs, README, tutorial and docs; 20 tests."
+recorded_at = "2026-09-30T21:43:23.090902+00:00"
+state_before = ""
+state_after = "state(93e1aed8e5aec142e41b93244563f5b244aac0e4658e4530beef37387d513ee9)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for unasked baseline raises, 2 for a defect found only in review, 1 for a missing end-to-end test, 1 for a repeated question left open."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "All gates pass and docs are in line after one review round; less 2 for raising import ceilings and sweeping older drift into the baseline, left for the owner to confirm."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only writable repositories touched; nothing committed or pushed; the README pointer to a private spec was removed after review."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Sound, well tested design; less 2 for a memory status path that shipped dead until review, 1 for no end-to-end test of the offer through a real command, 1 for a no-owner answer that is asked again every time."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
