@@ -1,0 +1,43 @@
+ticket = "AsOfRetrieval"
+goal = "Answer what was this tree at time T from the memory's ledger: the State recorded at or before T, saying so when the chain cannot be trusted."
+action = "AsOf (pure parse and select), client memory_as_of, memory as-of command with help, docs in README, tutorial, user guide and API guide, 14 tests."
+recorded_at = "2026-10-01T14:43:16.260717+00:00"
+state_before = ""
+state_after = "state(63c869e480316723c80f8caf6f880b02b8a994ff930e247ef711eedc5faf838f)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for import raises awaiting approval, 2 for two input edge cases."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "All gates pass, bump-build done, docs and PDFs in line, mirror and help tests hold; less 2 for two import raises awaiting the owner's approval."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Read-only: the state area is byte-identical after running it on the real tree; nothing committed or pushed."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Small, pure, clear; selection follows chain order as the ticket asks; less 1 for a lowercase z being rejected, 1 for a far-past offset date raising OverflowError instead of a clear message."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
