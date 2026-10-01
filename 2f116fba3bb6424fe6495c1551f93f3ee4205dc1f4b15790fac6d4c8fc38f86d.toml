@@ -1,0 +1,43 @@
+ticket = "HelpErgonomy"
+goal = "Make --help useful: one sentence and examples per command, options shown in group help, a grouped top level, and a full reference from cgitsync help --all."
+action = "help_text.py holds every help string, help_format.py lays out the parser and adds the help command; stale --search-dir text replaced everywhere; README and user guide updated; 59 tests."
+recorded_at = "2026-10-01T11:33:40.215170+00:00"
+state_before = ""
+state_after = "state(8ca2b24ee0444dc706279d1e5bb104d6f496126db6e790e0dd13b3f4b0c53ebc)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for import raises still to be approved, 2 for no wrapping at narrow widths."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "All gates pass, bump-build done, expert.py shrank, docs in line; less 2 because five cli modules gained an import each, which the owner asks to approve each time."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Nothing committed or pushed; only the project's own and local writable repositories changed."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Clear design, no import cycle, 59 tests; less 2 because inline option lines and the start-here block are not wrapped at a narrow terminal, as D3 asked."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
