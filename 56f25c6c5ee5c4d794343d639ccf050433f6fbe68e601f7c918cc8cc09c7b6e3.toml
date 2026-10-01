@@ -1,0 +1,43 @@
+ticket = "LocalRunLogs"
+goal = "Stop pushing run logs with the memory, keep them where autofix reads them, and bound the local folder to the 200 most recent."
+action = "logs left the fold; one prune rule called by both log writers; memory reboot clears logs older folds left; docs, tutorial and 7 tests."
+recorded_at = "2026-10-01T09:44:47.577093+00:00"
+state_before = ""
+state_after = "state(32defd7c0bb885ecb5bef6b7a8b7165fcb2ff7426dfab9be7247042a6a7e69f3)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "33+33+34, less 4 for a stale docstring and an acceptance line the ticket cannot meet alone, 2 for docstring tidiness, 2 for the verify line left to the owner."
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Lint, tests, structure gates, status errors=0 and bump-build pass and docs are in line; less 3 for a stale client.py docstring still listing logs in the fold, 1 because the acceptance line verify-passes cannot be met here."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Nothing committed or pushed; the private memory was only read, never repaired; nothing already pushed was deleted."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Small, one rule in one place, edge cases hold (oldest keep path, keep=0, missing dir, directory named .log); less 2 for the stale docstring and unspecific long docstring lines."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
