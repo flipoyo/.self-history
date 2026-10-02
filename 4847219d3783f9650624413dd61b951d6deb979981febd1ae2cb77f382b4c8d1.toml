@@ -1,0 +1,43 @@
+ticket = "AutofixBlindSpot"
+goal = "Let autofix inspect a repository's latest commit message for rule breaks and shell damage, and amend it safely when a person supplies the corrected text."
+action = "autofix --tip-commit with --repo, --message, --message-file and --force; read-only inspection by default; amend refuses a published commit without --force, a stopped rebase, merge, cherry-pick or revert, and a malformed replacement; never pushes; 24 tests."
+recorded_at = "2026-10-01T15:24:46.587099+00:00"
+state_before = ""
+state_after = "state(2a6cee491f70627d207b545357de70b60b8880cecb3e8318c775d749c6d79acd)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for import raises awaiting approval, 2 for the remote view limit, 3 for a review-found defect and known heuristic limits."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "All gates pass, bump-build done, docs and PDFs in line, a missing autofix spec row added; less 2 for two import raises awaiting the owner."
+
+[conformity.gating]
+score = 31.0
+basis = "asserted"
+reasoning = "Nothing is ever pushed; amend is local only and refuses a published commit without --force; the one gap found in review, amending during a stopped rebase, was fixed and re-tested with real Git; less 2 for the remote view being only this clone's."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Careful and well tested with mutation checks; less 3 for the defect found only in review, the detached HEAD case left as it is, and heuristics that can flag aligned text."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
