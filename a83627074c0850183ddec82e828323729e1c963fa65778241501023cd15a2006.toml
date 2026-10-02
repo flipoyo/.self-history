@@ -1,0 +1,43 @@
+ticket = "GitLikeCli"
+goal = "Remove ten commands and flags (force-reclone, clean-init, purge, freeze, freeze-release-force, launch-release, clone, configure, create-cgs, force-gitignore-sync) so no command can delete unpushed work; keep every Git-like command. The orchestrator judged the release level: MAJOR (4.0.0), the reason being part of this record."
+action = "Orchestrator audited the worker diff against the ticket, fixed a dropped staticmethod decorator on a dead helper and other leftovers, added a child-clone test, bumped to 4.0.0 because removing documented commands and flags breaks the CLI contract in Versioning.md, wrote CHANGELOG.md and rebuilt the PDFs."
+recorded_at = "2026-10-02T17:58:50.683962+00:00"
+state_before = ""
+state_after = "state(0042634b7fdea486a59161829ef83ed70fb09c6cb44b07f4bcef5f83c9e38cc0)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Release level MAJOR: the ticket removes documented commands and flags, which Versioning.md lists as a break of the public interface."
+
+[conformity.spec_respect]
+score = 28.0
+basis = "asserted"
+reasoning = "Gates pass and removals complete; minus 5 for leftover dead helper, stale docstrings and an empty test module the worker left behind."
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Nothing pushed, no agent credit, no ceiling raised, private record kept private."
+
+[conformity.quality]
+score = 28.0
+basis = "asserted"
+reasoning = "Clean mechanical removal with kept commands intact; minus 6 because the section 5 acceptance test covered only pull on the root, and dead code remained."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
