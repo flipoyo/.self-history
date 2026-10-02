@@ -1,0 +1,43 @@
+ticket = "TmpBranchClosure"
+goal = "WP5: pull-force never leaves a commit on no branch; stash instead of discard; remove reset_hard"
+action = "Orchestrator reviewed the worker diff, probed the guard and stash on throwaway repos, fixed an over-refusal for another checked-out branch and two stale doc passages, bumped to 3.14.11, rebuilt the PDFs"
+recorded_at = "2026-10-02T15:48:06.534457+00:00"
+state_before = ""
+state_after = "state(31e3b975315ca87e3c535b6cf16c4d4bc45fe7ffa286a72199aeec354f7c30b5)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "31 + 33 + 28 = 92 out of 100; deliberately open items (force-reclone ruling, tmpPyPi, WP4) not penalised"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Rules kept (no rewrite, ruling table, ceilings approved, versioning); user guide kept a stale hint sentence and left freeze-release-force consequence unstated"
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint, 1998 tests, check-ceilings, check-spectree, check-build-version pass; status errors=0; verify clean; no public leak of vendor or model"
+
+[conformity.quality]
+score = 28.0
+basis = "asserted"
+reasoning = "Guard and stash sound and atomic preflight; but over-refused when another branch was checked out, spurious stash and warning for an untracked nested repo, stale remote-tracking refs can under-refuse, freeze-release-force now stops after its own commit"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
