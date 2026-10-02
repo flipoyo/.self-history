@@ -1,0 +1,43 @@
+ticket = "TmpBranchClosure"
+goal = "Close the tmp branches; WP2 close-branch per-repository, WP3 first branch closed"
+action = "Orchestrator review of WP2 (3.14.6): found and fixed a data-loss path (local branch behind origin was closed and origin's extra commits dropped), added two tests, bumped to 3.14.7, rebuilt the five PDFs, verified the real-tree close of tmp-main-1-2_DiscoverRoundTrip"
+recorded_at = "2026-10-02T14:58:00.373962+00:00"
+state_before = ""
+state_after = "state(4636b40df3461dd0cb7ca24b62292881d413752e10bd05e68d68b6f586f496df)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "29+33+28=90 out of 100"
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Versioning, docs, README, spec tree, LOC approval recorded; but import ceiling 17 to 18 raised in the baseline with only a LOC approval on record"
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "No private data or real model names in public files; no remote written by the review; close on real tree touched only project and private/local"
+
+[conformity.quality]
+score = 28.0
+basis = "asserted"
+reasoning = "Design and tests sound, but a branch behind origin lost its commits (fixed in review) and the collision and behind cases were untested"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
