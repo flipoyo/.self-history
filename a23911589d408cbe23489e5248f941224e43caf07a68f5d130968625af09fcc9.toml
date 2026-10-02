@@ -1,0 +1,43 @@
+ticket = "BranchAncestors"
+goal = "Make closing a branch the safe point: keep what a branch alone holds on the permanent ancestors branch, record each move as a ledger relocation, and add branch check/delete so a closed branch can be deleted by any tool without loss."
+action = "Added AncestorOperation, MemoryChapters, the additive relocations ledger field and UNRESOLVED_RELOCATION check, branch check/delete and memory --branch; fixed recompute_hash omitting release. Kept three closed branches and deleted tmp-main-1-2_DiscoverRoundTrip on the real tree; released 4.2.0."
+recorded_at = "2026-10-02T21:45:35.254804+00:00"
+state_before = ""
+state_after = "state(b740a8449b247fed7bd697b677c215718e5df98437e4a4f089f0097951e00cd6)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = true
+pushed_reason = "Owner's go-ahead for WP7/WP8 (ancestors pushes and the proof-of-concept delete), as reported by the worker"
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 6 for spec gaps (WP6 lookup by subject, WP1 States, test coverage, expert.py size, one misstatement), 0 for gating, 7 for quality (untested lgr and search-tool paths, unleased remote delete, a misleading check message, size)."
+
+[conformity.spec_respect]
+score = 27.0
+basis = "asserted"
+reasoning = "Less 2: WP6 search tools find a chapter by parsing merge subjects and an endswith(ancestors) match, not by the recorded to address; 1: WP1 omits States in other chapters naming the commits; 1: section 6 tests miss show/list/explore and delete-side keep/record failures; 1: cli/expert.py grown further past 2000 lines; 1: told the owner no import count grew (self-corrected)."
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Only project and private/local repos written, private/distant skipped; no real vendor/model in root or docs diffs; WP7/WP8 pushes made on the owner's go-ahead as reported; never forced."
+
+[conformity.quality]
+score = 27.0
+basis = "asserted"
+reasoning = "Sound: refuses before rename/delete, CAS ref updates, fast-forward pushes, release-hash bug fixed and tested. Less 2: no test of lgr relocations; 2: WP6 show/list/explore untested; 1: remote delete has no lease on the checked sha; 1: branch check on an absent branch says loses nothing; 1: tree_commands +163 LOC."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
