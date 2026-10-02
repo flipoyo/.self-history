@@ -1,0 +1,43 @@
+ticket = "CliGrammar"
+goal = "One CLI grammar: subcommands are plain words, -- is only an option; written into DevSpecs and applied to every cgitsync command."
+action = "Respelled branch, close-branch, pull-force, verify, the submodule commands, env and memory self-history; added the grammar test, old-spelling hints, specs and docs; released 4.1.0."
+recorded_at = "2026-10-02T18:48:36.192285+00:00"
+state_before = ""
+state_after = "state(3579862ae03fd4a4b8d0981bc02562670aac0a07793fb4bebe5b1f8dd3a7cf51)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 7 for gaps in the docs sweep and old-spelling hints, 1 for an unruled shared-spec edit, 5 for test and message defects the orchestrator fixed."
+
+[conformity.spec_respect]
+score = 26.0
+basis = "asserted"
+reasoning = "-3 README prose and spec docs still named old spellings; -2 two-word old spellings gave no hint (acceptance item); -1 user-facing messages kept pull-force and --apply; -1 grammar test used ticket rule numbers and had no rule-1 plant."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "Nothing pushed, errors=0, ceiling raise owner-approved and recorded; -1 edited the shared DevSpecs mount on an unanswered 4.1 (recommendation taken as ruling)."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Handlers reused, behaviour and options preserved, tests rewritten faithfully; -2 a test pinned the stale --apply message; -2 grammar hyphen check missed close-branch; -1 pull --private help silent on --force."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
