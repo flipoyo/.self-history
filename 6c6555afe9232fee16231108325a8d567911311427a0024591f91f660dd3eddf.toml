@@ -1,0 +1,43 @@
+ticket = "MemoryForkRepair"
+goal = "Make the live memory verify without rewriting any commit, and keep agent-work records that existed only on tmp branches."
+action = "Merged two single-record tmp branches into self-history locally; left old-chapter ledger entries on their branches to be kept by closing them; archived the ticket."
+recorded_at = "2026-10-02T16:04:29.929442+00:00"
+state_before = ""
+state_after = "state(d6625806b9ef8411baa9e40c30b76974d9b0a970581a52d0fad850da93654dfd)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "31/33 + 33/33 + 31/34 = 95/100"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "No history rewritten, merges are no-ff and add one file each; original merge of tmpPyPi into live moot after reboot, narrowing sound but 126-129 now depend on a later branch close."
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Records stayed in private repos, nothing pushed, no record content copied into tracked public files."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Ticket claims on ledger entries re-derived true; spectree, lint, 1998 tests pass; the 168-entry verify claim only partly confirmed (merge shape, not verify) and the conflict list matches."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
