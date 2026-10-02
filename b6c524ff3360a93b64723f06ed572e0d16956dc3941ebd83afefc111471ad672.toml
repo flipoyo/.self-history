@@ -1,0 +1,43 @@
+ticket = "RuleConformity"
+goal = "Audit 3.14.2 against every MUST/NEVER rule and fix the five breakages and the work packages that can be closed."
+action = "Worker fixed B1-B5 and WP2, WP6, WP7, WP8, WP9, WP11 in 3.14.3 to 3.14.5; orchestrator verified each with commands and a second audit."
+recorded_at = "2026-10-02T14:26:39.664188+00:00"
+state_before = ""
+state_after = "state(155befe008f7ca62409a253f73b14fe25003812c3982a87203f888cda189fda4)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for a ticket note left unrecorded, less 4 for guard and CI edge cases; gaps G1,G3 deny list,G5,G8,G9 left open and named, not penalised."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Less 2: the ticket's note block did not record the last step (fixed by orchestrator); two rules not yet written for edge cases."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "No public file names an agent outside README; private repos not anonymised; nothing pushed; no credit trailer."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Less 4: rewrites guard misses -f, --force-with-lease=value and f-string plus refspecs; CI range check fails open on an unknown before sha; one adopt test keeps a conditional assertion."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
