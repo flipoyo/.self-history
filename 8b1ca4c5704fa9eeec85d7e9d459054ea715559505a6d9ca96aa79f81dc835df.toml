@@ -1,0 +1,43 @@
+ticket = "UserInstallPath"
+goal = "Give users one install command (pipx) with no clone and no Pixi: package metadata, a proved artefact, CI and tag-release workflows, changelog, and a user section in README and docs, without publishing anything."
+action = "Classifiers, urls and an sdist allow-list; smoke_installed.sh; CI installed job; unpublished release.yml; CHANGELOG.md; README and getting_started split into users and contributors; bootstrap hint no longer assumes Pixi; specs and 8 packaging tests."
+recorded_at = "2026-09-30T22:42:43.997568+00:00"
+state_before = ""
+state_after = "state(9bc0f4b707923ad74d6c16a3609bb557649e260fe55386aa80626ff007c1ccfc)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for a test that goes red at the next version bump, 4 for remote behaviour that could not be checked here."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Lint, tests, structure gates and status errors=0 pass, bump-build done, docs and PDFs in line; less 2 because the changelog test goes red at the next bump-version, which the checklist runs after the tests."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Nothing tagged, published or pushed; the real tree .cgitsync was untouched by the smoke script run with CGSHOME set; the sdist carries no developer mounts."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Sound, small, proved by building the artefacts and running the smoke check; less 2 for a changelog-version test that couples every bump to an edit, 2 for CI and release workflow behaviour that cannot be run here."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
