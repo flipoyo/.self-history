@@ -1,0 +1,43 @@
+ticket = "ProjectBranchList"
+goal = "branch --list answers which branches the project has and which repositories lack each"
+action = "Added project_branches (client, GitTreeBranches, runner, git_branch), --per-repo keeps the old view, docs and specs updated"
+recorded_at = "2026-10-02T08:31:22.607131+00:00"
+state_before = ""
+state_after = "state(c85b2f1b7c073fa2ac5d92d925c941461becddbe0245083f6f00362771889787)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for the detached header, less 3 for untested uncloned and private-scope coverage"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "All of section 5 met and gates green; minus 2: a detached root prints a different header than the spec's cgitsync_branch=detached"
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only the declared writable repositories changed, read-only command, nothing pushed"
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Rule stays in git_branch, CLI thin, edge cases handled; minus 3: no test for uncloned or --private coverage, detached path untested at CLI"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

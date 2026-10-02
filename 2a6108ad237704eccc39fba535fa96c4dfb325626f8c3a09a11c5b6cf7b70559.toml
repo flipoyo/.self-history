@@ -1,0 +1,43 @@
+ticket = "ProjectBranchList"
+goal = "Make branch --list print the project's own branches (root's local and origin) with per-branch repository coverage; keep the per-repository view under --per-repo."
+action = "Whole-implementation audit: ran lint, tests, ceilings, status, branch --list on the real tree; checked every ticket section and the checklist; added the missing README status paragraph pointer to branch --list."
+recorded_at = "2026-10-02T10:25:52.600203+00:00"
+state_before = ""
+state_after = "state(c85b2f1b7c073fa2ac5d92d925c941461becddbe0245083f6f00362771889787)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "31+32+31=94 out of 100 (33+33+34)"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "measured"
+reasoning = "Sections 1, 2, 4, 5 all met and checked on this tree (memory-dev, tmpPyPi listed). Gap: README status paragraph did not point to branch --list; fixed by the orchestrator. Minus 2 for that."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "Lint, 1964 tests, check-ceilings, status errors=0 pass; bump-build and bump-version 3.13.0 run; PDFs rebuilt; README, user guide, API guide, CLAUDE.md, AdditionalSpecs updated; owner-approved ceiling raise recorded. Minus 1 for the README gap found only at review."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Placement follows the ticket, rules stay in git_branch.py, tests cover uncloned, --private, detached, closed, read-only. Minus 3: tree_commands imports a private underscore helper from status_render, and the first pass printed a wrong detached header, needing a second fix."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
