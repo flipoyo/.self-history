@@ -1,0 +1,43 @@
+ticket = "ReleaseTags"
+goal = "After tag and freeze-release the tree stays on its branch, the next push reaches the branch, and checkout of a tag restores the release without creating a branch."
+action = "Removed tag propagation from tag/freeze-release, push never pushes a tag as a branch, old States settled to Git's branch on load, tag checkout detached with refusal and read-only skip; tests, docs, changelog."
+recorded_at = "2026-10-06T12:44:16.300054+00:00"
+state_before = "state(34b56bb573d79a6f031263de9ad499fcebf34b84ea02c32576a0c22790afdba9)"
+state_after = "state(34b56bb573d79a6f031263de9ad499fcebf34b84ea02c32576a0c22790afdba9)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 5 for doc and spec slips, 0 for gating, 10 for the memory-mount regression and smaller gaps: 85."
+
+[conformity.spec_respect]
+score = 28.0
+basis = "asserted"
+reasoning = "Lint, 2008 tests, ceilings, check-oo, check-spectree and status errors=0 all pass, bump-build done; less 2 for a broken code fence in tutorial 2 step 8, 1 for the misplaced Its-preflight sentence in user_guide freeze-release, 1 for the stale client.checkout docstring, 1 for WP2's branch push not going through push_tree's path."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only project, docs, .localSpec and .claude were written, every distant mount clean, no vendor name in public diffs, nothing committed or pushed."
+
+[conformity.quality]
+score = 24.0
+basis = "asserted"
+reasoning = "Sound fix, eight new or changed tests fail on the old code; less 7 because checkout --ref-kind tag detaches the declared memory mount, so a later push folds ledger entries onto a detached commit that checkout main orphans (reproduced), 1 for the read-only comment in tutorial 2, 1 for WP5(f) tested only against a fake runner, 1 for settle_recorded_tags rewriting a genuinely tag-pinned target when its clone was moved to a branch."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

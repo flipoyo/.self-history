@@ -1,0 +1,43 @@
+ticket = "ReleaseTags"
+goal = "Follow-up to the first quote: keep the memory on its branch when a release tag is checked out, and close the seven smaller findings."
+action = "Tag checkout leaves everything under .cgitsync on its branch, with a warning and a test; doc, tutorial and docstring fixes; refspec repair before the release branch push; settle only the old freeze's signature; real-remote release test."
+recorded_at = "2026-10-06T12:55:02.202913+00:00"
+state_before = "state(34b56bb573d79a6f031263de9ad499fcebf34b84ea02c32576a0c22790afdba9)"
+state_after = "state(34b56bb573d79a6f031263de9ad499fcebf34b84ea02c32576a0c22790afdba9)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for the path-based memory test: 98."
+
+[conformity.spec_respect]
+score = 33.0
+basis = "asserted"
+reasoning = "Lint, 2010 tests, ceilings, check-oo, check-spectree and status errors=0 pass; bump-build done again for the src change; AdditionalSpecs, user guide, tutorial, changelog and ceiling note all match the code; nothing taken off."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Same four writable repositories touched, every distant mount clean, nothing committed or pushed."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "All eight findings verified fixed, the memory loss no longer reproduces in my own scratch run; less 2 because the memory is singled out by a path under .cgitsync rather than by a named property of the repository, so a memory mounted elsewhere would not be covered."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
