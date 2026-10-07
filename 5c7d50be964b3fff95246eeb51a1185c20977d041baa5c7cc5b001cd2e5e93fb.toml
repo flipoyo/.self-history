@@ -1,0 +1,43 @@
+ticket = "DiscoverWriteRoot"
+goal = "Follow-up to the first quote: bring the discover --write examples and the API guide in line with 4.3.3, and log the path actually written."
+action = "getting_started.tex and c_cgs.tex validate the draft inside the scanned directory; api_python.tex says where output lands and names written_to; the log event records written_to; released 4.3.4 with PDFs rebuilt."
+recorded_at = "2026-10-07T14:55:04.008597+00:00"
+state_before = ""
+state_after = "state(48d7ebc3f68e8dd6e1c27833bcbcac9438a88c2880c27ca26af67a6d9917cd42)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, nothing taken off: 100."
+
+[conformity.spec_respect]
+score = 33.0
+basis = "asserted"
+reasoning = "All four findings closed; bump-build then bump-version patch, CHANGELOG, PDFs rebuilt after the doc edits, gates pass."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only project and private/local writable repositories changed, nothing committed or pushed, status errors=0 ahead=0."
+
+[conformity.quality]
+score = 34.0
+basis = "asserted"
+reasoning = "Minimal, exact fixes at no LOC cost; PDFs checked to carry the corrected examples; a script interrupted partway was recovered and the full suite still passes."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
