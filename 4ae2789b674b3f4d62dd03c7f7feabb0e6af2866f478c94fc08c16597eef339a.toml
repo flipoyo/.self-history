@@ -1,0 +1,43 @@
+ticket = "BootstrapLanding"
+goal = "Owner's answer to D2: put a dash between the project name and the timestamp, so a bootstrapped workspace is $HOME/.cgs/<project-name>-<timestamp>."
+action = "resolve_bootstrap_root writes <name>-<timestamp>; docstrings, help, tutorials, docs, spec row and CLAUDE.md example swept; tests updated; short ticket filed and closed; released 4.3.2 with PDFs rebuilt."
+recorded_at = "2026-10-07T13:43:28.780825+00:00"
+state_before = ""
+state_after = "state(5cc8bbae076e2f435e63483d76ac2f9efc265685cdddf1bd56780604d46a28d8)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, nothing taken off: 100."
+
+[conformity.spec_respect]
+score = 33.0
+basis = "asserted"
+reasoning = "bump-build then bump-version patch, CHANGELOG, PDFs, gates all done; owner's answer filed as a stamped short ticket; archived history ticket left unedited per TICKETLIFECYCLE 4.1."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only project and private/local writable repositories changed, nothing committed or pushed, status errors=0 ahead=0."
+
+[conformity.quality]
+score = 34.0
+basis = "asserted"
+reasoning = "One-line code change, swept completely (no dashless example left outside the released 4.3.0 changelog entry), tests pinned to the exact name, end-to-end bootstrap verified."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

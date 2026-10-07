@@ -1,0 +1,43 @@
+ticket = "BootstrapLanding"
+goal = "bootstrap lands on $HOME/.cgs/<project name><timestamp>, the name read from the .cgs or .gts, instead of $HOME/.cgs/CGS<timestamp>/<given name>."
+action = "PathResolver.resolve_source_project_name and the one-segment check; bootstrap name argument made optional in CLI and client; other_workspaces lists one-level workspaces; tests, docs, tutorials, specs; orchestrator released 4.3.0 and rebuilt the PDFs."
+recorded_at = "2026-10-07T12:49:28.851198+00:00"
+state_before = ""
+state_after = "state(5cc8bbae076e2f435e63483d76ac2f9efc265685cdddf1bd56780604d46a28d8)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for a one-place claim only half true, 0 for gating, 5 for the traceback refusal, the lost run-log entry and duplicated logic: 93."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "All checklist steps done and docs swept; less 2 because the ticket and AdditionalSpecs say the name rule lives in one place while initialise's .cgs path (paths.py 205, 254) keeps its own copy."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only project and private/local writable repositories changed, nothing committed or pushed, status errors=0 ahead=0."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Sound and tested, end-to-end bootstrap verified; less 3 for the new name refusal raising a bare ValueError (traceback, exit 1, against the guide's one-line exit-2 contract), 1 for source errors no longer reaching the run log, 1 for the given-name rule written twice."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
