@@ -1,0 +1,43 @@
+ticket = "FallbackMain"
+goal = "A .cgs entry that declares no fallback_branch falls back to main, not to its own default_branch, so target and fallback never collapse; private/local entries keep their own chain."
+action = "git_branch.apply_declared_defaults defaults fallback_branch to main except for private writable entries; cgs_format writes back through it instead of a second copy; tests, user guide, c_cgs, specs; orchestrator released 4.4.0 and rebuilt the PDFs."
+recorded_at = "2026-10-07T15:56:11.092483+00:00"
+state_before = ""
+state_after = "state(dd08475596f00c213426a56d1c9fa316da48692dc7c99287b61b0e77ee8661a1)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 2 for a stale chain diagram and an imprecise changelog, 0 for gating, 2 for two untested paths and a crammed line: 96."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Checklist and acceptance met; less 1 for git_branch.py's module docstring and the CLAUDE.md row still drawing the old chain, 1 for the changelog saying the old fallback was the target when it was default_branch, missing the one working case that changes."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only project and private/local writable repositories changed, nothing committed or pushed, status errors=0 ahead=0."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Right fix in the one owner, second copy removed, verified by hand; less 1 for no test of a nested .cgs or the tree write-back path, 1 for meeting the ceiling with a 120-character line instead of asking for a raise."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
