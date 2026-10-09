@@ -1,0 +1,43 @@
+ticket = "PairRuleUpstream"
+goal = "Make the shared pair rule bind in every project: AgentConduct §4 states the trigger, decisions first, the worker's forbidden acts and a gate; DevSpec Versioning stops letting a worker release a ticket's work; ComplexGitSync's fill-ins point to it."
+action = "DevSpec AgentConduct §4.1 (five orders and why) and §4.2 (a SHOULD gate and its limit), Versioning §4 and §5 limited to fixes the owner asks for directly, README line; CLAUDE.md pointer and D5 exception, P8 paragraph replaced; digest cites §4.1; cgitsync-dev.md and .dev/Versioning.md aligned."
+recorded_at = "2026-10-09T16:35:15.964046+00:00"
+state_before = ""
+state_after = "state(77c1123cda1dc0591b969935d6280b8c05ad1f59acc09f91ebf8d7cf3c10af46)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "31/33 + 33/33 + 30/34 = 94/100. No blocking defect. Four non-blocking: residual worker bump hint in cgitsync-dev.md:53 and scripts/bump_build.py:95; two editorial sentences in AgentConduct §4.1/§4.2; one ambiguous section reference in cgitsync-dev.md:186. No src, script or docs change, so no build or release bump (Versioning §3)."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "D1-D5 followed, only WP1-WP3 files touched under .distant, every check green, no bump due; but cgitsync-dev.md:53 and bump_build.py still tell the worker to run bump-version next, left unflagged."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "cgitsync status shows both project-scope repositories clean; every change is in private mounts (DevSpec, .claude, .localSpec, .dev); no record or ticket text reaches a public repository."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Pattern text is project- and vendor-agnostic, orders are clear and consistent with §1.3 and Versioning; minus for an overclaiming history sentence (AgentConduct 245-246), an awkward gate sentence (252-253), and an ambiguous 'this project's §4.2'."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
