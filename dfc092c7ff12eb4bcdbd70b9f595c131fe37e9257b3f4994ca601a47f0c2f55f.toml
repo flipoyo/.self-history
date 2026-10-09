@@ -1,0 +1,43 @@
+ticket = "MergeErgonomics"
+goal = "merge --resolve and --all-conflicts never Git-merge the memory, never loop, never resolve a file in silence; a seventh tutorial teaches merging a tree."
+action = "Removed the hard-coded regeneration and binary git add, bounded merge_resolve_all and stopped it by name on unrelated or binary stops, added two ResolveOutcome fields, seven resolve tests, Tutorial 7 with its replay test, and the user guide and API text."
+recorded_at = "2026-10-09T10:15:09.083232+00:00"
+state_before = ""
+state_after = "state(d07eb163278709587aa513ab4f04c02de04a9c93b6be882d7ad16aa45aa4937f)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 8 for process breaches (no orchestrator at start, decisions and bump-version taken before or instead of their owners) and missing tutorial links, less 11 for an unreported commit and lost merge list under --all-conflicts, private-API reuse, a thin tutorial replay and small wording and hygiene faults. PATCH confirmed: no command, flag, exit code or --json field changed."
+
+[conformity.spec_respect]
+score = 25.0
+basis = "measured"
+reasoning = "Lint, 2140 tests, check-ceilings, check-oo, check-spectree and status errors=0 all pass (measured); bump-build, patch, PDFs, ticket archive with deep copy done. Less 3 for starting without an orchestrator, 2 for implementing the section 6 decisions before the owner confirmed them, 2 for running bump-version (the orchestrator's call), 1 for D3 and section 4 links left out (Tutorial 5 and Tutorial 6 section 5.1 do not link to Tutorial 7)."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only project, docs and .dev were written, all writable; no real vendor or model and no agent credit in any public file (grepped); nothing pushed (status ahead=0, synced); the baseline raise is owner-approved."
+
+[conformity.quality]
+score = 23.0
+basis = "asserted"
+reasoning = "Dangerous regeneration removed, loop provably bounded, F1/F2 tested. Less 4: merge_resolve_all returns only its last pass, so earlier merges and the merge commit it makes itself are never reported; 2: reimplements GitRunner.has_unmerged_paths and commits through private _run; 2: Tutorial 7 replay skips --into, memory merge and section 7; 1: no-tool instructions dropped under --all-conflicts; 1: tutorial claims re-run reports up-to-date repos; 1: unclosed file handle, stopped_status defaults to conflicts on success, vague binary message."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

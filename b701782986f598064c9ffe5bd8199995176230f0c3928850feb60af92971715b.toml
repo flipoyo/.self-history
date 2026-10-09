@@ -1,0 +1,43 @@
+ticket = "MergeErgonomics"
+goal = "Re-quote after the worker's fixes: merge --resolve and --all-conflicts never Git-merge the memory, never loop, never resolve or commit without saying so; Tutorial 7 teaches merging a tree."
+action = "Fixed the six findings of the first quote: merge_resolve_all reports every pass and its own merge commits, uses public GitRunner methods, prints the by-hand command; fuller Tutorial 7 replay, two more tests, links from Tutorials 5 and 6, spec row updated. Orchestrator bumped 5.1.2 to 5.1.3 and rebuilt the PDFs."
+recorded_at = "2026-10-09T10:27:06.346816+00:00"
+state_before = ""
+state_after = "state(d07eb163278709587aa513ab4f04c02de04a9c93b6be882d7ad16aa45aa4937f)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "33+33+34, less 7 for process breaches that the fixes cannot undo (no orchestrator at start, decisions and bump-version taken before or instead of their owners), less 2 for a tutorial step not replayed and a first round that needed rework. PATCH confirmed and applied as 5.1.3, since the follow-up moved the build again."
+
+[conformity.spec_respect]
+score = 26.0
+basis = "measured"
+reasoning = "Lint, 2144 tests, check-ceilings, check-oo, check-spectree, status errors=0 pass (measured); bump-build 0003.76 left the release bump to the orchestrator as required; links and AdditionalSpecs row now done. Still less 3 for starting without an orchestrator, 2 for implementing the section 6 decisions before the owner confirmed them, 2 for running bump-version in the first round."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only project, docs, .dev and .localSpec written, all writable; no real vendor or model and no agent credit in any public file (grepped); nothing pushed (ahead=0); baseline raise owner-approved, no further raise."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "All six findings verified fixed in code and through the CLI (two conflicts in a row: both merge commits have two parents and are listed; no-tool prints the command; binary named, not staged; orphan memory kept, no tool opened). Less 1: branch close and delete of Tutorial 7 section 7 not replayed (reason documented, covered elsewhere); less 1: the first round needed a second pass to report what it committed."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
