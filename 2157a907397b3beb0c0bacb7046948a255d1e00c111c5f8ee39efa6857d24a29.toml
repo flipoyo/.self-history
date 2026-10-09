@@ -1,0 +1,43 @@
+ticket = "ReleaseCommand"
+goal = "Replace freeze-release with cgitsync release freeze, list and load, tag releases <project-name>-<version>, and let any user find and reload a release from the root's annotated tag."
+action = "Re-quote after fixes: release load now leaves the memory on its branch and rolls back on a refusal, list times are UTC, and the missing acceptance tests exist. Orchestrator re-ran every check, released the follow-up fix as 6.0.1 and rebuilt the five PDFs."
+recorded_at = "2026-10-09T17:53:07.225995+00:00"
+state_before = ""
+state_after = "state(f60bbac0e75d706b0b002a3cee659f54145f8a24c4a6351c20e31bb19df98ecc)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "31 + 32 + 31 = 94 out of 100, up from 78 after the worker fixed the blocking memory defect and six of the seven other findings. No blocking defect remains."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Every section 10 item now has a test, D1-D10 are honoured and specs and docs agree; BY stays empty for a ledger-only release because the ledger records no author, a documented limit."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "lint, 2192 tests, check-ceilings, check-oo, check-spectree, check-tickets and status errors=0 pass; the root tag excludes private repositories and the memory is never moved by a load; no vendor names in the public front."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "The blocking memory defect is fixed and tested in a DEV tree; load is now all-or-nothing with a tested rollback; times sort in one UTC form; the remaining notes are minor."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

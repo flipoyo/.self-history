@@ -1,0 +1,43 @@
+ticket = "ReleaseCommand"
+goal = "Replace freeze-release with cgitsync release freeze, list and load, tag releases <project-name>-<version>, and let any user find and reload a release from the root's annotated tag."
+action = "Worker built ReleaseCommands, ProjectVersion and the release CLI group, annotated root tag, dash commit prefix, docs and specs. Orchestrator re-ran every check, bumped 5.2.1 to 6.0.0 (major), rebuilt the five PDFs, found one blocking defect."
+recorded_at = "2026-10-09T17:39:41.278705+00:00"
+state_before = ""
+state_after = "state(f60bbac0e75d706b0b002a3cee659f54145f8a24c4a6351c20e31bb19df98ecc)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "25 + 29 + 24 = 78 out of 100. One blocking defect (memory detached by release load in place) must be fixed and re-quoted before the ticket is archived."
+
+[conformity.spec_respect]
+score = 25.0
+basis = "asserted"
+reasoning = "Commands, tag naming, D1-D10, specs and docs follow the ticket; but release load in place detaches the memory, which checkout_tag_tree documents as never done, and the WP0/WP9 tests for two projects, a DEV tree, read-only repositories and a tag-only release are missing."
+
+[conformity.gating]
+score = 29.0
+basis = "measured"
+reasoning = "lint, 2186 tests, check-ceilings, check-oo, check-spectree, check-tickets and status errors=0 pass; the root tag excludes private repositories (tested); no vendor names in the public front; DevSpec change limited to AgentConduct 2; but a load moves the private memory back in time."
+
+[conformity.quality]
+score = 24.0
+basis = "asserted"
+reasoning = "Small, readable classes and delegates; blocking: a DEV-tree release load detaches .cgitsync/.memory and .self-history at old commits (reproduced); minor: mixed-timezone sort in release list, untracked files can stop a load midway, stale freeze-release docstrings."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
