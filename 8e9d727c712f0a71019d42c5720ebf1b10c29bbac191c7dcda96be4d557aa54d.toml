@@ -1,0 +1,43 @@
+ticket = "PairRuleGate"
+goal = "Re-quote of PairRuleGate after the review fixes: the gate fails closed on an unreadable record, nested private archive is tested, digest and user guide corrected."
+action = "Verified fixes 2 to 5 against the diff and reran every check. Found the fixes changed src without bump-build and without the follow-up patch to 5.2.1."
+recorded_at = "2026-10-09T15:33:49.093175+00:00"
+state_before = ""
+state_after = "state(d2578e491d0e1405ca1c1a80ad0077571d1617c196b47440b28950c358bbe462)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "29 + 33 + 33 = 95/100, up from 92: quality rose with the fixes; spec respect held, since two fixes were offset by the missing follow-up version bump."
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Digest and user guide now right, but the CLAUDE.md descriptive paragraph stays and the review fixes to src got no bump-build and no follow-up patch, as Versioning.md 5 requires."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Nothing pushed; public code, tests and docs name no vendor or model and carry no private content."
+
+[conformity.quality]
+score = 33.0
+basis = "asserted"
+reasoning = "An unreadable record now refuses naming its file, the real nested private layout is tested both ways, full suite green; only naive porcelain unquoting remains."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

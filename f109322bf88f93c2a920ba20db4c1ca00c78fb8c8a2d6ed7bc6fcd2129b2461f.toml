@@ -1,0 +1,43 @@
+ticket = "PairRuleGate"
+goal = "Final re-quote of PairRuleGate once the review fixes were released as their own build and patch."
+action = "Worker ran bump-build 0003.77 to 0003.78; orchestrator ran bump-version patch 5.2.0 to 5.2.1, rebuilt all five PDFs and reran every check."
+recorded_at = "2026-10-09T15:37:26.436870+00:00"
+state_before = ""
+state_after = "state(d2578e491d0e1405ca1c1a80ad0077571d1617c196b47440b28950c358bbe462)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "31 + 33 + 33 = 97/100, up from 95: the missing follow-up build and patch are now done; the CLAUDE.md paragraph and porcelain unquoting cost the rest."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Every step and acceptance item met, version follow-up done; only the old descriptive CLAUDE.md paragraph that 4.1 asks to replace remains, left to the owner."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Nothing pushed; public code, tests and docs name no vendor or model and carry no private content."
+
+[conformity.quality]
+score = 33.0
+basis = "asserted"
+reasoning = "Gate fails closed naming an unreadable record, nested private layout tested both ways, full suite green; only naive porcelain unquoting remains."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

@@ -1,0 +1,43 @@
+ticket = "PairRuleGate"
+goal = "Make implement <ticket> an explicit order to launch an orchestrator, ask owner decisions first, and refuse an archived planning ticket that has no orchestrator record."
+action = "Added TicketGate, pixi run check-tickets and the cgitsync commit refusal, the CLAUDE.md ordered block, digest lines, spec and user guide text; deleted the stale settings.json. Orchestrator quoted it, bumped 5.1.3 to 5.2.0 and rebuilt the PDFs."
+recorded_at = "2026-10-09T15:23:29.092031+00:00"
+state_before = ""
+state_after = "state(d2578e491d0e1405ca1c1a80ad0077571d1617c196b47440b28950c358bbe462)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "29 + 33 + 30 = 92/100. No blocking defect; four non-blocking ones cost spec respect and quality."
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Checks pass and the new block, digest lines, ring and table row match the ticket, but the old descriptive CLAUDE.md paragraph and digest line were kept, not replaced as 4.1 asks."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Nothing pushed; public code, tests and docs carry no vendor or model name and no private content; real names only in private repositories."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Correct gate, refusal test shown to fail without the hook, full suite green; a corrupt record gives a traceback, and no test covers the archive in a separate private repository."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
