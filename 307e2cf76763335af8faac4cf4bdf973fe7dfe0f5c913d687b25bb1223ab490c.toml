@@ -1,0 +1,43 @@
+ticket = "ReleaseErgonomy"
+goal = "The release tag carries the freeze message and reads as TOML; release load installs into the current workspace, cloning what is missing; --workspace prints the export line; a detached tree has a tested way back."
+action = "Worker implemented; orchestrator found one blocking defect (untrue import baseline), re-quoted after the owner approved the 3 import raises, then bumped 6.0.1 -> 6.1.0 (minor) and rebuilt the PDFs."
+recorded_at = "2026-10-13T16:12:04.805797+00:00"
+state_before = ""
+state_after = "state(40a3e06f9727e295f81a458ecd55a79731173205647de00d3f10d9e28988bfce)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "Plain sum 31 + 31 + 30 = 92 out of 33 + 33 + 34 = 100."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Module rules, single-implementation rules, docs and digest kept; baseline and approval sentence now true after the owner approved the import raises."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, 2203 tests, check-ceilings, check-oo, check-spectree, check-tickets and status errors=0 all pass; real cawaqs-C363 manual run not done."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Sound design with unit and integration tests; recorded gaps: clone_recorded does not name already-cloned repos on failure and has no nested-parent test; CGSHOME on an empty dir falls through to the default workspace, untested."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
