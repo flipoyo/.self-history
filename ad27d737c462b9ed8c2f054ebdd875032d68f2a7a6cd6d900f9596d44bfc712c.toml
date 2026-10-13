@@ -1,0 +1,43 @@
+ticket = "AutofixBlindSpot"
+goal = "autofix, with no failing command in the log, reads the tip commit of each writable repository and reports a message that breaks the commit rule or looks shell-damaged, changing nothing."
+action = "Worker added a second Situation source, MalformedCommitMessageRepair, two read-only git_runner queries, tests, docs and specs. Orchestrator found one blocking defect (a punctuation sign flagging 46 of 200 past commits), the worker tightened it to 6, and the second pass found none; bumped 6.2.0 -> 6.3.0 (minor) and rebuilt the five PDFs."
+recorded_at = "2026-10-13T18:20:43.233766+00:00"
+state_before = ""
+state_after = "state(b47ce6ee29d0602c223bd66e7b4e419e2d218bf896f2365aacfecd90e5a746e0)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "Plain sum 30 + 32 + 31 = 93 out of 33 + 33 + 34 = 100."
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "Rewrites nothing and adds the second Situation source; two ticket clauses (branch-name heuristic, merge-diagnosis note) are deferred, recorded in a dated ticket note."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "lint, 2220 tests, ceilings, oo, spectree, tickets and status errors=0 all pass; import counts re-measured. One point off for the import rise the worker's hand-check missed."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Small, documented, read-only module; the noisy regex was fixed and tested after review; the deferred clauses cost the rest."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
