@@ -1,0 +1,43 @@
+ticket = "DevOnlyClosure"
+goal = "branch close and branch delete are refused, by name and before any repository is touched, in a tree that holds no private repository (USER profile); a DEV tree is unchanged."
+action = "Worker added WorkingGitTree.require_dev, called first in both TreeCommands methods, with tests, docs and spec lines. Orchestrator re-ran every check, found no blocking defect, bumped 6.1.0 -> 6.2.0 (minor) and rebuilt the five PDFs."
+recorded_at = "2026-10-13T17:28:54.178921+00:00"
+state_before = ""
+state_after = "state(d34f5e771215f37cc4c267c318e771d09c14c29573d32243d3321adb934bccab)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "31 + 32 + 31 = 94 out of 33 + 33 + 34 = 100. No blocking defect."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Lint, tests, status errors=0, bump-build and bump-version done; 2 off: section 6 asks for a USER-tree memory test that only the existing default-memory test covers."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "Nothing pushed, no import or public-symbol change (checked by hand), ceilings raised only as approved; 1 off for the short ticket note edit in a private repo being the only non-listed write."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Guard is one method and first in both callers; 3 off: the caller test only sees new files, not a new call in an existing file, and checks the call by text not order; the git_command line prints before the refusal."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
