@@ -1,0 +1,43 @@
+ticket = "DroppedTicketGate"
+goal = "Let the pair-rule gate exempt a ticket the owner dropped unbuilt, marked by a '> **Dropped — ' banner in its first 30 lines."
+action = "TicketGate.gated skips a history ticket carrying the banner via one private method _dropped; 3 gate tests plus a cgitsync commit test; AdditionalSpecs, digest and DevTickets/README state it."
+recorded_at = "2026-10-13T18:53:09.890045+00:00"
+state_before = ""
+state_after = "state(9f8519250a72a9ca10fcfc29eeb4003bba554f78fa3bf5771de2288d0bd51075)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "Score 97/100 = 32/33 spec respect + 33/33 gating + 32/34 quality."
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Ticket 3 items met; ceiling raise asked and approved; no import or public-symbol change (0 import lines in diff, baseline loc only). -1: cgitsync-dev.md gate sentence not updated to mention the exemption."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint, 2224 tests, check-ceilings, check-oo, check-spectree, check-tickets and status errors=0 all re-run by the orchestrator and pass."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Small, fail-closed-neutral (unreadable file means not dropped, so still gated), tests cover marker, 30-line limit, banner plus record and the commit path. -2: no test for a marker only in a deep copy or a non-ASCII-decoding failure; abuse by adding the banner is stated honestly but unguarded."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
