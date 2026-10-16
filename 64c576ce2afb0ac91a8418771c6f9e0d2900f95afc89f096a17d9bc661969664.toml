@@ -1,0 +1,42 @@
+ticket = "WindowsCompatibility"
+goal = "Make cgitsync work from Git Bash on Windows: forward-slash paths in pasted lines, HOME first, CRLF-proof checkout twins, read-only rmtree, tutorials and docs for bash plus other shells."
+action = "Quoted the worker's diff against the eight steps and the digest; ran lint, tests, ceilings, spectree, tickets, status; bumped 6.3.3 to 6.3.4; rebuilt the PDFs; reported defects for a re-quote."
+recorded_at = "2026-10-16T13:05:42.064074+00:00"
+state_before = ""
+state_after = "state(81b5670b1bb77a49f2ecded65af043cbc72bf58a3185c80469ed53aac1d00c53)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "89 of 100 = 27 of 33 spec respect + 33 of 33 gating + 29 of 34 quality. Lint passed. Tests: 2234 passed, 4 failed, all 4 from the owner's examples/cawaqs.cgs line 17 and not this work, so neither tests flag is given."
+
+[conformity.spec_respect]
+score = 27.0
+basis = "asserted"
+reasoning = "Owner decisions D1-D5 and ceiling raises respected; but the checkout-twin rule still says same bytes in digest.md, AdditionalSpecs.md hard prohibitions and user_guide.tex after the code moved to blob ids."
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "No agent credit or ticket content in the public repos; the record and ticket stay private; no push, no commit."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Fixes are small and each confirmed on a Windows runner; one new test asserts D: on a Windows path that gives D:/ there, a long unreadable line in git_runner, tutorial says never backslashes though some messages still print them, rmtree onerror deprecated from Python 3.12."
+
+[checks]
+lint_passed = true
+status_errors = 0
