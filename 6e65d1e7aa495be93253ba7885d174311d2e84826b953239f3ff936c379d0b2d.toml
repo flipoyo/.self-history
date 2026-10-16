@@ -1,0 +1,43 @@
+ticket = "improve-tuto"
+goal = "Tutorial 2 works on a branch before the first change (branch create, branch list, checkout feature), since the sandbox's main is protected, and the other tutorials and docs agree with it."
+action = "Re-quote after fixes: AdditionalSpecs, digest and the ceiling log now state the untracked-twin checkout, git show's exit code is checked and tested, the tutorial wording is exact. No blocking defect left; orchestrator bumped 6.3.2 -> 6.3.3 (patch, follow-up fix) and rebuilt the five PDFs."
+recorded_at = "2026-10-16T10:27:40.501199+00:00"
+state_before = ""
+state_after = "state(8f32765d2b36ba9affa6ea9b26b5202b23ff474aa8e36e101e2a2624f5a78db5)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "Plain sum 32 + 33 + 33 = 98 out of 33 + 33 + 34 = 100, up from 95 at the first quote; no blocking defect."
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Less 1: step 6 and the ceiling log were done only after the first quote asked for them; everything else (bump-build, tests, docs, digest line, spectree) in line."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Nothing pushed (local replay only, as the owner chose); no vendor or model name and no agent credit in the public diffs; status errors=0; the unrelated example .cgs left alone."
+
+[conformity.quality]
+score = 33.0
+basis = "asserted"
+reasoning = "Less 1: the twin rule leans on parsing Git's English refusal text (pinned locale makes it safe today). Fix verified: the new tests fail without it; every edge case probed behaves."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

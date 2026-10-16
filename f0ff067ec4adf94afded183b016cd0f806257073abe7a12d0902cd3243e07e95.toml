@@ -1,0 +1,43 @@
+ticket = "improve-tuto"
+goal = "Tutorial 2 works on a branch before the first change (branch create, branch list, checkout feature), since the sandbox's main is protected, and the other tutorials and docs agree with it."
+action = "Worker rewrote Tutorial 2 (nine steps), fixed checkout and release load past bootstrap's byte-identical untracked .gitignore in a fresh install, with unit and replay tests. First quote: one blocking defect (AdditionalSpecs not told that checkout now sets untracked files aside); orchestrator bumped 6.3.1 -> 6.3.2 (patch) and rebuilt the five PDFs."
+recorded_at = "2026-10-16T10:13:12.825737+00:00"
+state_before = ""
+state_after = "state(8f32765d2b36ba9affa6ea9b26b5202b23ff474aa8e36e101e2a2624f5a78db5)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "Plain sum 30 + 33 + 32 = 95 out of 33 + 33 + 34 = 100, first quote; one blocking defect open (step 6)."
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "Less 2: step 6 missed, AdditionalSpecs' git_runner row and its table of commands that delete work do not say checkout now unlinks untracked twins; less 1: the owner-approved +30 LOC raise is not logged in AdditionalSpecs Ceilings."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Nothing pushed (local replay only, as the owner chose); no vendor or model name and no agent credit in the public diffs; status errors=0; the unrelated untracked cawaqs-C365.cgs left alone."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Less 1: _checkout_past_twins ignores git show's exit code, so an unresolvable ref compares as empty bytes; less 1: Tutorial 2 says GitLab refuses a push to main from anyone, untrue for a maintainer or a fork, and CGSih1 is on GitHub. Fix verified: 5 of the 7 new tests fail without it."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
