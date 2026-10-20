@@ -1,0 +1,43 @@
+ticket = "TutorialsOverHttps"
+goal = "Make every tutorial work over HTTPS for a reader with no SSH key, keep SSH the default, and say once in the docs why and how to switch."
+action = "Quoted the worker's WP1-WP5 against the eight steps and acceptance 6, traced the release load and pull .gts clone paths to the forced protocol, ran Tutorial 1 bootstrap live with SSH disabled (HTTPS ok, no flag fails), sent back two blocking defects (stale cawaqs test, help and user guide calling the flag CI-only), re-quoted after the fixes, bumped 6.3.4 to 6.4.0 (minor, new release load flag), rebuilt the five PDFs, noted the partial live run in ticket 3.1."
+recorded_at = "2026-10-20T18:41:47.271062+00:00"
+state_before = ""
+state_after = "state(981c8af5c958ad22c011de5cb3a41aecbbad1857e98819ce365f201946876ec7)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "93 of 100 = 31 of 33 spec respect + 31 of 33 gating + 31 of 34 quality. Supersedes the provisional 82 of the first quote, which had two blocking defects."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Owner answers followed and default kept SSH; ReleaseCommands and TreeCommands set the client's private _forced_access_protocol, which lingers in a long-lived session (left, as installer.py does)."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "Lint, 2248 tests, ceilings, oo, spectree, tickets and status errors=0 pass after the fixes; acceptance 6.1 verified live for Tutorial 1 bootstrap only, push, release load and Tutorials 2-7 not run live."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Small, well-placed fix with unit tests and a tutorial guard test; first quote needed a second pass for a red suite and help text contradicting the tutorials; standalone c_getting_started.pdf shows ?? for the cross-chapter ref, as it already did."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
