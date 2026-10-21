@@ -1,0 +1,43 @@
+ticket = "PushAnchor"
+goal = "Record the remote's own ls-remote answer after each push and let a read-only check say whether the remote still agrees."
+action = "Re-quote after the worker's fixes: pinned old-row digest, USER-tree test, --state guard, wrapped lines, baselines raised again; version bumped patch."
+recorded_at = "2026-10-21T00:35:09.468510+00:00"
+state_before = ""
+state_after = "state(29e7b9005a2a6d9c5fd00da3611306e7c15d76e4d164f250d0a4ffb895417167)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 96 of 100 (32 of 33 + 32 of 33 + 32 of 34), supersedes the 88 first record after the worker's fixes. No blocking defect."
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Every acceptance bullet now has a test, including the USER tree; docs and spec updated."
+
+[conformity.gating]
+score = 32.0
+basis = "asserted"
+reasoning = "All gates pass after the fixes; the worker only built, the orchestrator bumped the version."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "All reported defects fixed; the digest is pinned to a literal; --state misuse is refused."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
