@@ -1,0 +1,43 @@
+ticket = "OmniscienceAppend"
+goal = "Register a State in the shared Omniscience register by several people at once, never forcing, and record whether each registered repository is still there."
+action = "Added omniscience register and observe: fast-forward-only appends with retry, a validated checkpoint chain, observations as events beside the register, a completeness policy, docs and specs."
+recorded_at = "2026-10-21T13:42:02.744700+00:00"
+state_before = ""
+state_after = "state(2419526d6b0db277e3560c84ffd7bbe46848aa6b976c56397dbc3533fbd4474b)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5 (began under claude-opus-5-5 until the session model was switched)"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 89 of 100 (33+33+34): points lost for the injection defect found in review, the unextended Finding taxonomy, and unchecked observation signatures."
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Module shape, single-implementation, CLI grammar and doc rules followed; the Finding taxonomy was not extended and omniscience verify was left out, both stated in the specs; a command-injection hole in unvalidated published rows was shipped first and fixed after review."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "Owner decisions asked first, ceiling raise approved; lint, check-oo, check-ceilings, check-spectree, check-tickets passed, status errors=0, full suite 2423 passed 2 skipped before the fix and 2424 passed 2 skipped after; bump-build run by the worker."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Append, race, crash and hand-append cases are tested against a bare remote and the design never forces; a review found and the worker fixed an injection through the commit of a published row; hand-written observations are not signature-checked and the thresholds in the D4 policy are the worker's guess."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
