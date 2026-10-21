@@ -1,0 +1,43 @@
+ticket = "OperatingSpace"
+goal = "Make the loaded GitTree the only reference: one read-only project name, H_GITTREE computed from the tree, and every git operation but clone and pull on a READY OperatingSpace."
+action = "Re-quote after fixes: every reader of the project's name now uses GitTree.project_name, the dead old rule is gone, the digest citations are right, list_branches is unguarded (D6), the name change is documented in the user guide (D5), and the integrity test requires a root; orchestrator bumped 6.7.0 to 6.7.1 for build 0003.94 and rebuilt the PDFs."
+recorded_at = "2026-10-21T09:15:58.524526+00:00"
+state_before = ""
+state_after = "state(024d8ea2e8c5c16ada639bae01d3a175f0f35a1cd849d8a2709bd1d82bfbed43)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "31 + 32 + 30 = 93 of 100 on the re-quote, no blocking defect left."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Owner's order and D2-D6 met: one name source, root from the tree, git operations on OperatingSpace; the three blocking findings needed a second round."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "lint, 2283 tests, ceilings, oo, spectree, tickets and status errors=0 pass, no ceiling raised; the first round's digest slip passed check-digest unseen."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Clean shared builders and a real cross-document test; the write-time root check stays nearly tautological and list_branches' docstring still says an uncloned repository is reported while the operation skips it."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

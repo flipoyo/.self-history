@@ -1,0 +1,43 @@
+ticket = "OperatingSpace"
+goal = "Make the loaded GitTree the only reference: one read-only project name, H_GITTREE computed from the tree, and every git operation but clone and pull on a READY OperatingSpace."
+action = "Worker made GitTree.project_name read-only and set once, moved git operations to OperatingSpace with a READY guard, shared the repo_state and leaf builders, checked the written root against the tree, and added the cross-document integrity test; orchestrator quoted it, bumped 6.6.0 to 6.7.0 and rebuilt the PDFs. First quote: blocking defects returned to the worker."
+recorded_at = "2026-10-21T09:01:31.866092+00:00"
+state_before = ""
+state_after = "state(024d8ea2e8c5c16ada639bae01d3a175f0f35a1cd849d8a2709bd1d82bfbed43)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "24 + 31 + 26 = 81 of 100 on the first quote; three blocking spec defects keep spec respect down."
+
+[conformity.spec_respect]
+score = 24.0
+basis = "asserted"
+reasoning = "D2-D4 followed, but nine call sites (memory branch, mount entry, memory commit message, ledger name) still read the root entry's name, a dead _root_project_name keeps the old rule, and the digest line lost its citation."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, 2283 tests, ceilings, oo, spectree, tickets and status errors=0 all pass, bump-build ran; check-digest did not catch the stripped citation."
+
+[conformity.quality]
+score = 26.0
+basis = "asserted"
+reasoning = "One builder for tables and leaves is clean, but the write-time root check is near-tautological, the integrity test skips a None root silently, branch list --per-repo now refuses a partial tree, and the private-branch and tag rename for trees named otherwise is undocumented."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
