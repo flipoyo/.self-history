@@ -1,0 +1,43 @@
+ticket = "OmniscienceQuery"
+goal = "Give Omniscience a public read-only API, nine cgitsync omniscience query subcommands, and an eighth tutorial, so a reader can find a project, prove a State and read its registered memory."
+action = "Added Omniscience, RegisterView and MemoryReading with typed answers, the client mirror, the CLI facade with --json, a global inclusion proof, tutorial 08 with its test, docs and specs."
+recorded_at = "2026-10-21T18:42:58.469981+00:00"
+state_before = ""
+state_after = "state(0032b2d98c3d4603680b76b4502af40dfca5d7fec6e49172834461bad9b56cb8)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "31+33+31=95 out of 100; no blocking defect"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Digest and AdditionalSpecs updated, read-only and typed-outcome rules followed, ticket extended for tutorial; Omniscience section 10 closing note is left to archive time."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Lint, 2481 tests, check-oo, ceilings, spectree, tickets and status errors=0 all re-run by the orchestrator after bump-version minor; PDFs rebuilt."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Every outcome has an integration test and no option-like value from a record reaches Git; cosmetic wart in the CLI parser setup and a get_state --out file write in a read-only command, both documented."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
