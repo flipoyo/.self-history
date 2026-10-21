@@ -1,0 +1,40 @@
+ticket = "OperatingSpaceId"
+goal = "Give every project one deterministic id, os_id, computed from the root project name by one OperatingSpace class, the same on every machine."
+action = "Added operating_space.py with OperatingSpace, wired os_id into status --json, memory show and a validate warning, with golden vectors, tests and docs; the owner's NFC, warn-only, plain SHA-256 answers were applied."
+recorded_at = "2026-10-21T07:54:21.687301+00:00"
+state_before = ""
+state_after = "state(e4d77547993472631e0dbc9d52b701b7994e012bd1f5f2d7bf9fc7c5c6a8e06c)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Owner's three answers and the merge order were followed, one major class, no baseline raised, spec table updated; the ticket text still describes WorkingGitTree.os_id and a ring-0 home, and the ticket lists unmet acceptance by test."
+
+[conformity.gating]
+score = 30.0
+basis = "measured"
+reasoning = "lint, 2273 tests, check-ceilings, check-oo, check-spectree and check-tickets all pass; the worker did not bump the version or score itself."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Small frozen class with golden vectors and rejection tests; missing tests for the validate warning, the memory show field and the same-id-across-install acceptance, and the State name and the root name are read from two places without a test that they agree."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
