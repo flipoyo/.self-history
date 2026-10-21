@@ -1,0 +1,43 @@
+ticket = "InclusionProofs"
+goal = "Milestone O1b of Omniscience: generate and verify an RFC 6962 inclusion proof from one repository's leaf to H_GITTREE under integrity_schema 1, with no digest moved and no second hash implementation."
+action = "Worker added ring-0 inclusion_proof.py (InclusionProof: of, verify with trusted root and size, to_dict/from_dict), OperatingSpace.inclusion_proof and a shared _leaves, unit and integration tests, and the AdditionalSpecs subsection; orchestrator accepted the trusted_size deviation (Omniscience 4, RFC 9162), bumped 6.7.1 to 6.7.2 for build 0003.95 and rebuilt the PDFs."
+recorded_at = "2026-10-21T10:07:30.649332+00:00"
+state_before = ""
+state_after = "state(fd7ec5272c18f36a9b14551210818b7e0708074c213a5e7f9297268a56b8021a)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "30 + 33 + 31 = 94 of 100 on the first quote, no blocking defect."
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "D1, D2 and the extra answer followed and every 5 acceptance point met; the verify signature departs from the ticket's text, with good reason and documented; small overstatements in the spec and a raw KeyError for an unknown repo_id."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Private capability only: no client method, no CLI, no user-guide line; no real vendor or model in the public diff; spec text in the private .localSpec; check-spectree, check-tickets and status errors=0 pass."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Correct by an independent check of sizes 1 to 69 with no false accept; digests only from GtsIntegrity, golden vectors untouched, ring-0 pure; tests compare against an independent RFC 6962 path; minor edge cases noted."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
