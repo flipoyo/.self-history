@@ -1,0 +1,43 @@
+ticket = "RFC6962-obsolete"
+goal = "Cite RFC 9162, which obsoletes RFC 6962 and keeps its tree hash, wherever the code and specs cite RFC 6962; change no behaviour."
+action = "Worker changed docstrings, comments, tests comments and AdditionalSpecs only, adding a paragraph on RFC 9162; orchestrator checked that paragraph against RFC 9162, bumped 6.7.2 to 6.7.3 for build 0003.96 and rebuilt the PDFs."
+recorded_at = "2026-10-21T10:17:14.531629+00:00"
+state_before = ""
+state_after = "state(d14180c56c732a47c4297d42594e4ceccf6f99f441b3bf03657c26eb7bdc2f74)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "32 + 33 + 33 = 98 of 100, no blocking defect."
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Wording-only as the owner asked; citations and section numbers correct; the new spec paragraph matches RFC 9162; short ticket archived unedited."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "No agent name in the public diff; check-spectree, check-ceilings, check-tickets and status errors=0 pass."
+
+[conformity.quality]
+score = 33.0
+basis = "asserted"
+reasoning = "No behaviour changed; 86 related tests pass; wording is plain and consistent across code, tests and spec."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
