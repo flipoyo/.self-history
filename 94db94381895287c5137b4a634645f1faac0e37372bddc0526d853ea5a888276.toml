@@ -1,0 +1,43 @@
+ticket = "OmniscienceRegister"
+goal = "Re-quote of OmniscienceRegister after the worker fixed the five non-blocking defects of the first quote"
+action = "Orchestrator re-read the fixes (refused schema-1 entry points on GlobalIntegrity, spec wording for _global, mount mismatch note, no-ledger-entry message), ran lint and the new tests, bumped to patch 6.8.1 and rebuilt the PDFs"
+recorded_at = "2026-10-21T11:21:01.237515+00:00"
+state_before = ""
+state_after = "state(1217aee5bb43dcea9588479e8ab83e879d380c9e1c93b23729dd7a2caf5e710b)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "31+33+31=95 out of 100; no blocking defect"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Spec wording now matches the code; the mount mismatch note only works when the loaded tree already knows the entry"
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Ceilings not raised, mount still refused in a USER tree, nothing written to the register, all checks pass"
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Each fix has a test; the fold double-append after a crash is knowingly left and reported to the owner"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

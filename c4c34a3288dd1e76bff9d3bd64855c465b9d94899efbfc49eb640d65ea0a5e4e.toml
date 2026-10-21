@@ -1,0 +1,43 @@
+ticket = "OmniscienceRegister"
+goal = "Freeze the Omniscience registration record, H_OS_STATE and the global index root (GLOBAL_SCHEMA 1), and add omniscience mount and record"
+action = "Worker added ring-0 record, global integrity and index, the mount repository, two commands, specs, docs and tests, and fixed the memory fold that lost commit logs; orchestrator reviewed, bumped to a minor version and rebuilt the PDFs"
+recorded_at = "2026-10-21T11:14:39.750844+00:00"
+state_before = ""
+state_after = "state(1217aee5bb43dcea9588479e8ab83e879d380c9e1c93b23729dd7a2caf5e710b)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "29+33+30=92 out of 100; no blocking defect, five non-blocking ones reported"
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Owner answers D1-D7 followed, ceilings not raised, digest and spec match code; the spec says a project named _global cannot be registered but nothing enforces it, and the mount docs overstate idempotence"
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Mount refused by name in a USER tree before any change, nothing written to the register, dev install cgs untouched, no ceiling raised, lint tests and checks pass"
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Independent hashlib reference and golden vectors, real-remote tests, fold fix with regression test; GlobalIntegrity inherits schema-1 merkle_root that now gives a hybrid hash, mount with a different writable silently keeps the old entry, origin hardcoded"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
