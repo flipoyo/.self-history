@@ -1,0 +1,43 @@
+ticket = "MerkleRoot"
+goal = "Close the two limits the first quote found in MerkleRoot"
+action = "Worker made InclusionProof non-dataclass, slotted and immutable so asdict, astuple and fields refuse it, and removed stray blank lines; orchestrator re-quoted and released 8.0.1"
+recorded_at = "2026-10-27T20:17:53.344668+00:00"
+state_before = ""
+state_after = "state(efeb8f24c7522974e895115f5342bb3f4e724819e09641d592e3a31c6c81cd76)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "97 of 100: 32/33 + 33/33 + 32/34. Supersedes the first record's 8.0.0 and its open asdict limit"
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Follow-up got its own patch bump, PDFs rebuilt, AdditionalSpecs says it, a test holds it"
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Nothing private reached a public repository; no push"
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "2589 tests pass; the path stays reachable by name, which Python cannot prevent, and a map test forbids reading it outside merkle/"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

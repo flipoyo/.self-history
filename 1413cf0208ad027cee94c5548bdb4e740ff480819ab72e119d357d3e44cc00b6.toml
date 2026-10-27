@@ -1,0 +1,43 @@
+ticket = "MerkleRoot"
+goal = "One class computes every hash and never hands out a tree"
+action = "Worker built merkle/MerkleRoot, moved every caller, removed three modules; orchestrator verified bit-for-bit hashes against HEAD, set major 8.0.0, rebuilt PDFs"
+recorded_at = "2026-10-27T20:04:55.581686+00:00"
+state_before = ""
+state_after = "state(efeb8f24c7522974e895115f5342bb3f4e724819e09641d592e3a31c6c81cd76)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "94 of 100: 31/33 + 33/33 + 30/34"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "All eight steps done; hashes byte-identical; ticket banner named 7.4.0 and the orchestrator corrected it to 8.0.0; one reformat of gts_document lines unrelated to the ticket"
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "No private content in public repos; no baseline raised; no push"
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "2588 tests pass, golden vectors unchanged; dataclasses.asdict on a proof still exposes the private path field (convention only)"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
