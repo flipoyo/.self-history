@@ -1,0 +1,43 @@
+ticket = "Minimalism"
+goal = "Map the package against the owner's ring model: modules by ring, unused names, CLI leaves to client methods, provider calls, Merkle surface, GitRepo boundary, folders."
+action = "Added scripts/map_surface.py and tests/unit/test_map_surface.py (holding BeforeBeta 2.5 rules 2, 3, 7 as snapshots) and the ticket's section 7; src/ unchanged."
+recorded_at = "2026-10-27T18:23:24.631408+00:00"
+state_before = ""
+state_after = "state(b48e2b1ce30206e85309effe6fd33a8046538ccd522242b7a427a6d5a7346828)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 90 of 100: two real defects caught by the orchestrator cost points in quality and gating."
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "Decisions D1-D7 correctly left unasked; verdicts labelled as proposal; no src change, no bump-build."
+
+[conformity.gating]
+score = 31.0
+basis = "asserted"
+reasoning = "Lint, tests, check-* and status errors=0 pass; two defects found on first quote were fixed and re-quoted."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "All headline figures matched; first pass mislabelled two writers and the provider test hid a duplicate site; both fixed."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
