@@ -1,0 +1,43 @@
+ticket = "EnvConnect"
+goal = "C2 remainder, C7 and C8 of EnvConnect: initialise takes a .cgs only, release load takes a State hash, twin memory branch ComplexGitSync_<project>, underscore refused at creation, DEV install reports a missing private branch instead of failing"
+action = "Removed initialise <.gts> (D1, MAJOR); release load accepts a 64-hex State hash found on disk or in the memory and verified against its content (D2, D4); twin memory and its nested .self-history filed on ComplexGitSync_<project>, decided at install and read back from the memory branch (C8, D8); _ refused in new project and branch names, memory branch never recreated; fallen-back DEV private repositories reported with the command that creates the branch (C7). Released as 7.0.0 after one orchestrator loop that fixed three blocking defects."
+recorded_at = "2026-10-27T00:51:42.005404+00:00"
+state_before = ""
+state_after = "state(72415c73e208b9eb4b41a236eee7c7623aca5d1613361948685325447a2e8146)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "29 + 33 + 28 = 90 out of 100 (33 + 33 + 34): sound work, docked for the three blocking defects the first quote found."
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Owner answers followed exactly and specs, digest and docs updated in the same change; the first quote missed part of C7's Done-when (warning for every fallen-back writable repository), fixed in the loop."
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "No agent name, ticket path or accounting data in the public diff; private specs keep real values; nothing committed or pushed; check-tickets and check-spectree pass."
+
+[conformity.quality]
+score = 28.0
+basis = "asserted"
+reasoning = "2501 tests pass with 16 new EnvConnect tests; first quote found three blocking defects (half-made memory branch on failed set-up, twin .self-history on the wrong branch, incomplete C7 report), all fixed and covered; memory_commands.py sits at 1994 lines, near the split threshold."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
