@@ -1,0 +1,43 @@
+ticket = "Omniscience"
+goal = "Prove the workstream's eleven done-when items against the current release, on local bare registers only, then archive the architecture ticket."
+action = "Worker closed two gaps (a register file held with other content is now refused before any write; os_id tested across every install route), added an unauthorized-push test and mapped each item to named tests; orchestrator quoted twice, bumped 7.1.0 to 7.1.1 (patch) and rebuilt the PDFs"
+recorded_at = "2026-10-27T12:31:05.852212+00:00"
+state_before = ""
+state_after = "state(aaa55ef2afd9699c74a2f9253843fc7b8a8b5018eb82d9f00ce36bb465e900dc)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "29 + 33 + 31 = 93 out of 100 (33 + 33 + 34)"
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "First quote found item 8 marked held on a test that never exercised an unauthorized append; fixed in one loop, with three weaker evidence rows corrected"
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "check-spectree, check-tickets and status errors=0 pass; no record or real agent name in a public repository; nothing pushed"
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Small guard with tests on real Git, ceiling raise within the owner's approval; a Windows line-ending case is left as a documented TODO"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
