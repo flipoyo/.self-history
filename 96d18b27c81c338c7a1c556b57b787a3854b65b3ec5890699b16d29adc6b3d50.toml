@@ -1,0 +1,43 @@
+ticket = "WorkingAreaRename"
+goal = "Name the two halves of a memory folded and pending in prose and show their counts in memory status, without renaming .cgitsync."
+action = "memory status prints folded= and pending= and memory_status returns pending_entries; tutorial, user guide, API docs and AdditionalSpecs say folded and pending."
+recorded_at = "2026-10-27T13:38:30.703788+00:00"
+state_before = ""
+state_after = "state(978d3b5d9b62f989aa3f08c916894b53a4fa50bafe4e15c91650e09fc9cbf7a0)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 96 of 100: 32 of 33 spec respect, 33 of 33 gating, 31 of 34 quality; a second count reads the pending directory again after entries, a small duplicate read."
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Owner D1 asked and followed; boundaries, CLI/API mirror, docs and AdditionalSpecs kept; worker did not bump version or score itself."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint, check-ceilings, check-spectree, status errors=0 and 2522 tests passed, rerun after bump-version at 7.2.0."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "pending_entries reads .cgitsync/lgr, the pending half; additive token and key, no consumer broken; tests cover both halves; condensed a docstring to hold the ceiling."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
