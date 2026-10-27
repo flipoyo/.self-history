@@ -1,0 +1,43 @@
+ticket = "CommitLogLoss"
+goal = "Report commit logs deleted by the pre-6.8.1 fold as a recorded loss, not corruption"
+action = "Worker added COMMIT_LOG_LOST and HistoryState.INCOMPLETE (exit 0), the 6.8.1 boundary in ChainVerifier, lost_commit_logs in verify check, tests and docs; orchestrator quoted twice, bumped 7.0.0 to 7.1.0 (minor) and rebuilt the PDFs"
+recorded_at = "2026-10-27T02:55:34.176626+00:00"
+state_before = ""
+state_after = "state(48b36220c6134523cd06e96f4d2c71e7d60d59c7cbd7d3cb007f6d89e437a97c)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "29 + 33 + 31 = 93 out of 100 (33 + 33 + 34)"
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "First quote found stale answer lists in four src docstrings and api_python.tex, a wrong citation, D1 asked on a false premise and D2 not deliverable; all fixed and re-asked; cli/expert.py ended one line above the approved 2218"
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "No real vendor or model in the public diff; check-ceilings, check-oo, check-spectree and check-tickets pass; status errors=0"
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Signature trusted only through the hashed toolchain, tested end to end incl. the edited-version and post-fix cases; lost_commit_logs compares a finding by name string"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
