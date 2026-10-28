@@ -1,0 +1,43 @@
+ticket = "NestedAgentMaster"
+goal = "A tree that nests another project's developer spec mounted shared repositories twice and its State refused itself; make the nearest mount the only clone and the State key unique."
+action = "New tree/mount_alias.py (alias as relative symlink, clash refused by name), shallow-first discovery, integrity schema 2 (tree_path) written only when needed, schema 1 untouched; docs and spec updated."
+recorded_at = "2026-10-28T16:49:14.951995+00:00"
+state_before = ""
+state_after = "state(f6b97e80cfc4052d15d37789708816aade23d120fed3ea83efbad3f984fd62fd)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "The work follows the spec tree and the owner's answers; scores are below the maximum because one caller of the new key was missed and two limits are left to later work."
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "Owner's answers D1-D4, Q2, Q4, Q6 followed; no new command, ring rules and ceilings kept; the ticket's section 8 states what was not done (validate of nested specs, live gx4g run); one stale caller (OperatingSpace.inclusion_proof) found and fixed by the orchestrator."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, full suite (2617 passed, 4 skipped), check-ceilings, check-oo, check-spectree, check-tickets, status errors=0, bump-build, bump-version minor and the PDFs rebuilt; verify check output identical before and after."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Schema 1 States keep their names byte for byte and schema 2 appears only when needed; one defect missed (the operating space proof keyed by relative_path), a bootstrap from a .gts does not recreate the alias symlink, and the symlink is not in any .gitignore a parent does not already carry."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
