@@ -1,0 +1,43 @@
+ticket = "BranchProtection"
+goal = "M5: find a dead or dying project branch (vanished, half-closed, split, orphaned-private, closed) and hand it over."
+action = "Added tree/branch_findings.py, client branch_findings() and branch_list_json(), status and branch list output, branch list --json, docs; no register write, no provider call."
+recorded_at = "2026-10-28T15:26:37.243236+00:00"
+state_before = ""
+state_after = "state(434bf3588c14b00d65479411719562e9c12af324f818caa23fc1de960e960223)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "The work follows the ticket and the owner's answers. One real defect and one stale help line were fixed by the orchestrator, so the score is not full."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Owner's D7, D9 and hand-over followed, nothing written, no command added, Minimalism kept; the single-owner naming rule held."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "Lint, 2606 tests, ceilings, oo, spectree and tickets green; ceilings did not grow; help text example was stale."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "The orchestrator found a false positive: a safe branch deleted by branch delete leaves no relocation and read as vanished; fixed with a test. Stray trailing commas in joined calls removed."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
