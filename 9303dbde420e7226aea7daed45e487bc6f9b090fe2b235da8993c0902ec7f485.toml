@@ -1,0 +1,43 @@
+ticket = "CliReduction"
+goal = "Every command is a thin caller of the client; remove what nothing uses"
+action = "Worker merged submodules report into import --dry-run/--now, gave unlock a client method, locked verify repair, removed 14 unused names and their tests; orchestrator grepped the removed names, diffed client.py (formatting only), re-ran gates and released 8.0.2"
+recorded_at = "2026-10-28T02:17:35.488762+00:00"
+state_before = ""
+state_after = "state(1bfaf8bae6c80efaac3a2804bb09442a44097d0366aacbd0d674bc577bfd5d48)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "95 of 100: 31/33 + 33/33 + 31/34. Released 8.0.2."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Autonomous rule, one-way mirror and the owner's submodules answers followed; client.py kept at baseline; one orphan (MemoryStateDirectory) left, closed in 8.0.3"
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Docs, tutorial and examples public-safe; tickets and record private; nothing pushed"
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "No removed name reached, deleted tests covered only removed methods, new tests for the lock, unlock, memory_repo_names and the CLI change"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

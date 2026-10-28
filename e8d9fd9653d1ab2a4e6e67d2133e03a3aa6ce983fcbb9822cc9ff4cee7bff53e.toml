@@ -1,0 +1,43 @@
+ticket = "CliReduction"
+goal = "Close the one orphan the first quote found"
+action = "Worker removed the unused MemoryStateDirectory class, its export and mentions, and hand-edited the first record, which broke its digest; orchestrator found the broken record and the missing bump-build, ran bump-build 0004.11, re-added the record, re-ran gates and released 8.0.3"
+recorded_at = "2026-10-28T02:17:35.844875+00:00"
+state_before = ""
+state_after = "state(1bfaf8bae6c80efaac3a2804bb09442a44097d0366aacbd0d674bc577bfd5d48)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "94 of 100: 28/33 + 33/33 + 33/34. Supersedes nothing; follows the 8.0.2 record."
+
+[conformity.spec_respect]
+score = 28.0
+basis = "asserted"
+reasoning = "bump-build skipped after a src change, and a content-addressed record hand-edited so check-tickets refused it"
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "Nothing private reached a public repository; nothing pushed"
+
+[conformity.quality]
+score = 33.0
+basis = "asserted"
+reasoning = "Removal complete, no reference left, 2575 passed"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
