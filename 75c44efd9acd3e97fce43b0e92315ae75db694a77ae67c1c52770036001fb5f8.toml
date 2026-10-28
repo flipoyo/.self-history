@@ -1,0 +1,43 @@
+ticket = "SrcLayout"
+goal = "Split the flat package into git_repo/, tree/, omniscience/ and operating_space/ folders (merkle/ already done), with git_repo/ importing nothing from the rest of the package."
+action = "Orchestrator review of the worker's 74 module moves and legacy_paths.py: confirmed only imports and paths moved, fixed two ceiling-dodging edits in the root __init__, chose PATCH 8.0.4, rebuilt the PDFs, re-ran every gate."
+recorded_at = "2026-10-28T09:06:44.371157+00:00"
+state_before = ""
+state_after = "state(ef4a0410717e6d62d33f1c9fd9db5880c394fc02a980691e2f692d79772d27a4)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 94 of 100. The work follows the ticket and the owner's answers closely. Points were lost for the ceiling workaround in the root __init__ (fixed here) and for a few documents that still name old bare file names."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "The folder rules, owner answers D1 to D5, the one-release alias layer and the spec and doc updates are all followed; a few docs still cite bare file names and the alias layer is installed through an absolute import that sidesteps the relative-import ceiling."
+
+[conformity.gating]
+score = 31.0
+basis = "asserted"
+reasoning = "Lint, 2589 tests, ceilings, oo, spectree, tickets and status errors=0 pass after the version bump and PDF rebuild; the worker's ceiling check was green only because the root __init__ __all__ had been squeezed onto one line, which this review undid."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Behaviour is unchanged (only import and path lines differ, every module imports alone, aliases keep one module object and its spec), git_repo/ is tested to import nothing, and the injection default is sane; the root __init__ needed two small corrections."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
