@@ -1,0 +1,43 @@
+ticket = "IntegrityMount"
+goal = "A .cgs is a request and the .gts may refuse it: deny a nested mount that would break the GitTree instead of growing the State, and undo 8.2.0's schema 2, tree_path, aliases and symlinks."
+action = "8.2.0's structure reverted to 8.1.0; new MountGuard (ring 1: identity, owner, clash) and MountDenial (ring 2: same repository on the same branch, shared relative_path), applied before any clone; nested Parent's private repositories on <Parent>_<Project>; denials warned and logged as mount_denied."
+recorded_at = "2026-10-29T00:21:14.440589+00:00"
+state_before = ""
+state_after = "state(4119f1e3365ac844457abd629f958a08483078cbcc7b4fadc4b950aacaacaa0a)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "The work follows the owner's rule and answers; scores are below the maximum because the first submission had two branch-rule defects and squeezed lines, all fixed before release."
+
+[conformity.spec_respect]
+score = 28.0
+basis = "asserted"
+reasoning = "Owner's answers D1-D6 followed and schema 1 restored byte for byte; first quote found the Parent rule wrong for a promoted holder and a top-level entry under a container, a ring inversion, and lines joined to fit ceilings instead of asking; all fixed, the raise asked and recorded."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint, full suite after the bump (2618 passed, 4 skipped), check-ceilings, check-oo, check-spectree, check-tickets, status errors=0, bump-build, bump-version minor and the PDFs rebuilt."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Minimal: no schema, field or file added to the State; owner rule now survives promotion and a .gts round trip, with tests; a late-discovered shallower request is denied rather than displacing a held mount (documented); denials surface as a plain Python warning."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
