@@ -1,0 +1,43 @@
+ticket = "BeforeCGS-BETA"
+goal = "Deliver BeforeCGS-BETA S10b and S10c: CI green on three systems, the yyyy-xxx.cgs name contract, project.fallback_branch, the level commands and the ALPHA/BETA leaves of OP*."
+action = "Worker implemented NamedCgs, op_levels, golden marker, CI matrix; orchestrator found that the rule refused memory reboot exports -v10..-v99, fixed it, released 8.5.0 (MINOR)."
+recorded_at = "2026-10-29T22:59:26.800909+00:00"
+state_before = ""
+state_after = "state(220c6c3266ffb6d12339d08f673030cda20b73124e85d3fa60d09ec11d329e88)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity]
+explanation = "Total 92 of 100 (30/33, 31/33, 31/34). The work follows the ticket and the owner's answers; points were lost for a false positive in the name contract found only at review and for CI and the real gx4g tree not yet exercised."
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "Owner answers (AD1-AD8, FD1-FD4, BD1-BD5) followed, minimalism held, one ceiling raise as approved; but the rule refused a memory reboot export the ticket says must read as today (-3)."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, 2662 tests, check-ceilings, check-oo, check-spectree, check-tickets and status errors=0 pass after the bump; bump-build ran; CI on three systems unverified until the owner pushes (-2)."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Small classes, hashes only through MerkleRoot, OP* exposes verdicts only, tests for each rule; missed the v10-v99 collision and an error message that omitted main (-3)."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
