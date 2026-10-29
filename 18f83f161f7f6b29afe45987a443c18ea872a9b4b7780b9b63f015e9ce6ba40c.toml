@@ -1,0 +1,43 @@
+ticket = "OpBoundary"
+goal = "Make OP the boundary class through which an operation on G enters ComplexGitSync, with isPoE returning OP* bounded by a four-bit PoE vector, and add sigma to OmniscienceRecord"
+action = "Added orchestre/op_boundary.py (PoE, Origin, Op, OpStar, RoutedClient, ROUTED), routed the CLI through RoutedClient as internal, added OmniscienceRecord.sigma committed only when present, 14 tests, specs, digest and api_python.tex; orchestrator fixed verify being routed without repair and the specs overclaiming the routed set, released 8.4.0 (minor)"
+recorded_at = "2026-10-29T13:20:56.376056+00:00"
+state_before = ""
+state_after = "state(91449ce8eb1d6e821a1df1924aa21b283fc839117a0704fbb56b85520c4dec96)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "29 + 31 + 30 = 90 out of 100: two spec defects fixed by the orchestrator, gates green apart from three owner-file test failures outside the ticket, and a few modest test and edge-case gaps"
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Follows every owner answer (Q1 ring 3, Q4 OP* content, Q5 Python API, O6 sigma only); verify was routed without repair against Q2 and the specs said every write or outside reach is routed, both fixed at quote"
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, check-ceilings (only the approved raises), check-oo, check-spectree, check-tickets pass and status errors=0; the full suite has 3 failures, all from the owner's draft notes in examples/gx4g-dev.cgs and gx4g-opx.cgs committed in 8.3.0, outside this ticket"
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Small, readable proxy and value classes with real-tree tests; the external-versus-internal test compares two trees rather than one, is_poe on a tree with no root hashes an empty string, and edges carry the operation for the whole tree"
+
+[checks]
+lint_passed = true
+tests_passed = false
+status_errors = 0
