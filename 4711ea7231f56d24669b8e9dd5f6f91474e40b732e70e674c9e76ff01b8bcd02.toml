@@ -1,0 +1,40 @@
+ticket = "CORR resolution complexgitsync-{opx,dev,usr,pub} (final state, supersedes the earlier record)"
+goal = "Resolve the owner's CORR: generate complexgitsync-{opx,dev,usr,pub}.cgs mimicking gx4g-*.cgs, replacing complexgitsync4dev.cgs, project name kept ComplexGitSync on main"
+action = "Re-quoted the final state after the owner's correction: all four specs load and validate, ci.yml differs from HEAD only by the filename, citations repointed, dev private entries on ComplexGitSync; version stays 8.6.1. The earlier record describes the abandoned lowercase name."
+recorded_at = "2026-10-30T17:38:15.478249+00:00"
+state_before = ""
+state_after = "state(0bd7127bf4dce67b16bffca19628a6203a64654dcd0e02489d66e396b655495a)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Eight steps followed; owner's answers applied; usr omits .memory on purpose."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint, check-spectree, 2689 tests passed, status errors=0."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Revert is clean, no stale citation; NamedCgs no longer covers these files by the owner's choice; no live bootstrap run."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
