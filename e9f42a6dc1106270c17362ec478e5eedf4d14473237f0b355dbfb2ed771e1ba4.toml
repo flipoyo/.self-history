@@ -1,0 +1,43 @@
+ticket = "LinkAtCGS"
+goal = "Link ComplexGitSync and @CGS on CGS-ALPHA: rename the ticket, drop every CGS-BETA reference, make CGS-ALPHA the yyyy-xxx.cgs fallback and the molonari OpFrontier target @CGS"
+action = "NamedCgs.FALLBACK is CGS-ALPHA; examples, tests, user guide, AdditionalSpecs and digest follow; complexgitsync-dev.cgs private entries drop default_branch so the merged spec validates under CGS-ALPHA; ticket renamed CGS-ALPHA_1-1_LinkAtCGS with section 10; released as minor 8.7.0 from 8.6.2, PDFs rebuilt"
+recorded_at = "2026-10-31T20:47:31.636345+00:00"
+state_before = ""
+state_after = "state(b780f7ad74cbc915432c9cf8c48b1f9fdb1f0348ebcb19fe610532e306e21584)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "28+31+29=88 of 100"
+
+[conformity.spec_respect]
+score = 28.0
+basis = "asserted"
+reasoning = "Rename and rule change consistent across code, tests, user guide, AdditionalSpecs and digest; ticket row 13 and the first banner no longer match what was done"
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, 2698 tests, status errors=0, check-spectree, check-ceilings, check-oo pass; check-tickets fails on the pre-existing twin memory (row 12), not on this diff"
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Small coherent diff; dropping default_branch moves a fresh dev bootstrap's private repos off ComplexGitSync, an RD3 matter the ticket does not record"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
