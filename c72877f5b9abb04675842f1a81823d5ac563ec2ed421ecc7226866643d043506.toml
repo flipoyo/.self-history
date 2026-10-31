@@ -1,0 +1,43 @@
+ticket = "CgshomeMismatch"
+goal = "A writing command refuses when CGSHOME names a workspace that does not contain the current directory"
+action = "CgshomeGuard in cli, one choke point in _run_with_logging; 11 tests; 37 tests chdir into their workspace; user guide and AdditionalSpecs updated; released as patch 8.6.2"
+recorded_at = "2026-10-30T18:18:59.664917+00:00"
+state_before = ""
+state_after = "state(335088f9dd77381e32345badcec2c721764cfc1e0f84e72fc478cb4523ae62e2)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "vendor-name"
+model = "model-name"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "vendor-name"
+model = "model-name"
+
+[conformity]
+explanation = "30+33+29=92 of 100"
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "CLI-only guard as the owner decided; baselines raised only as approved; docs and spec updated; one class per module"
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "lint, tests, status errors=0 and ceiling checks pass; refusal precedes log, lock and git"
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Sound and tested with real git; memory initialise/clone/mount not in the set and message prints a native path"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
