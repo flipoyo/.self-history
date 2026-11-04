@@ -1,0 +1,43 @@
+ticket = "BehindGate"
+goal = "A yyyy-xxx.cgs tree derives every private branch from its level, never the fallback, and ComplexGitSync behind another project's gate takes <project>_<xxx>"
+action = "Worker implemented level and behind_gate in git_branch and GitTreeBranches, the branch create then checkout install report, pull keeping the waiting root, 4 integration tests, specs and user guide; orchestrator reviewed, probed pull, checkout back and a partial level, bumped 8.7.6 to 8.8.0 (minor), rebuilt the PDFs"
+recorded_at = "2026-11-04T08:21:16.420697+00:00"
+state_before = ""
+state_after = "state(49502a747ed12fc8adef3a704f38d75e5c8adb3b64524d1a62d45b679dea4be3)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "31 + 33 + 30 = 94 of 100"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Owner answers Q1 c, Q2, Q3 a followed; rule kept in git_branch; raise asked and recorded; spec placed in Format ownership, not the install frontier the ticket named, and the user guide frames the guest rule as waiting-only"
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint clean, 2713 passed 4 skipped, check-spectree intact, check-ceilings within baseline, status errors=0, before and after the bump"
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Small, single-source change with tests that fail on the old code; the guest is no longer pulled while it waits, undocumented; a guest lacking its branch under a root already on its level is not named in the install report"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
