@@ -1,0 +1,43 @@
+ticket = "memory-mount"
+goal = "Item 1: memory branch creates the twin branch the State expects; item 3: a clean private mount waiting on its fallback base no longer stops commit"
+action = "settle_memory_twin takes the State's target on the fallback base; Preflight._waits_for_branch makes a clean, ALIGNED private repo on its fallback base, its branch known nowhere, a warning to commit and push only; re-quote caught a no-upstream hole letting push reach origin/main, fixed and tested; register writes verified to never land on main; released as patch 8.7.6, PDFs rebuilt; supersedes the 8.7.5 record"
+recorded_at = "2026-11-04T00:57:55.496314+00:00"
+state_before = ""
+state_after = "state(972e88262820329ef3066586c13cff4b9b2b634847c2a9259b1b9ba690ceb77e)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "32+32+30=94 of 100"
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Items 1 and 3 as the owner asked; spec and digest updated in the same change; ceilings kept without a raise"
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "lint clean, 2709 passed 4 skipped, status errors=0, ceilings and spectree intact; one round trip needed for a hole the gates did not catch"
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Narrow leniency, other operations still block, regression tests fail without each fix; two diagnostics compacted to fit the ceiling"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

@@ -1,0 +1,43 @@
+ticket = "memory-mount"
+goal = "memory branch creates the twin branch ComplexGitSync_<project> the State expects when the memory mount sits on its fallback base"
+action = "settle_memory_twin takes the State's recorded target when the mount is on its fallback base (main); integration test that fails without the fix; AdditionalSpecs install frontier and digest state the exception; released as patch 8.7.5, PDFs rebuilt"
+recorded_at = "2026-11-04T00:33:48.705370+00:00"
+state_before = ""
+state_after = "state(972e88262820329ef3066586c13cff4b9b2b634847c2a9259b1b9ba690ceb77e)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-opus-5-5"
+
+[conformity]
+explanation = "32+33+31=96 of 100"
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Item 1 done as the ticket says; spec and digest updated in the same change; ceiling kept without a raise; items 2-3 rightly left as owner notes"
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint clean, 2706 passed 4 skipped, status errors=0, spectree and ceilings intact; new test fails on HEAD and passes with the fix"
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Minimal and consistent with the push guard's base; exception keys on fallback_branch-or-main only, and the docstring was compacted to fit the ceiling"
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
