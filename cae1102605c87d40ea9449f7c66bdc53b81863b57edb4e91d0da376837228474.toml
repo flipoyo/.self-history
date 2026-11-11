@@ -1,0 +1,40 @@
+ticket = "alpha-examples"
+goal = "Reformat examples/ to the atCGS CGS-ALPHA standard: remove the level files, point every reader at examples/cgitsync-alpha.cgs."
+action = "Removed complexgitsync-{opx,dev,usr,pub}.cgs and gx4g-{opx,dev}.cgs, added gx4g-alpha.cgs, repointed CI, spec_tree, specs, docs, tests, tutorials; released 8.8.1."
+recorded_at = "2026-11-11T10:26:24.620767+00:00"
+state_before = ""
+state_after = "state(20a0b88ee5a691296c0478ab89f92167e3067cf7a8c2c2f8f570b17d40c35d1a)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Owner's D1/D3 followed, shared DevSpec left untouched; D2 rule change left to owner; no reader of removed files remains but LevelCommand names."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "lint, 2715 tests, check-spectree, check-ceilings and status errors=0 all green after bump-version 8.8.1 and PDF rebuild; validate run on a copy."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "gx4g-alpha.cgs validates and matches the standard; tutorial 05 excerpt no longer matches the file and LevelCommand still emits removed names."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
