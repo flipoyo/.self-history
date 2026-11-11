@@ -1,0 +1,42 @@
+ticket = "TreeVersion"
+goal = "cgitsync version diagnose, init and bump: every repository's version through Pixi, DEV or OPX trees only"
+action = "Worker implemented the scheme class, operation, client methods, CLI group, bump_version.py PDF rebuild, specs and docs; orchestrator judged it, mutation-tested the tests, and released 8.8.2 -> 8.9.0 with cgitsync version bump minor"
+recorded_at = "2026-11-11T13:03:20.691202+00:00"
+state_before = ""
+state_after = "state(53767a818a64b74e556aca6c24558e774d8526c0df42e6d40bd3c6d8f089980e)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "30+32+31 = 93 out of 100"
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "Every ticket section and owner answer met; two accepted deviations and a CLI that hides a named non-init repository's refusal"
+
+[conformity.gating]
+score = 32.0
+basis = "asserted"
+reasoning = "USER refusal covers all three subcommands, private and other-project rows never touched, nothing committed, no subprocess outside git_runner, ceilings raised by owner answer"
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Mutating the bump order and the dry-run guard each failed a test; the new command released its own tree; minor CLI init filtering gap"
+
+[checks]
+lint_passed = true
+status_errors = 0
