@@ -1,0 +1,40 @@
+ticket = "MergeIntoLocalTarget"
+goal = "merge --into with a target only the remote holds must refuse by name with the git branch command, not say no commit in common."
+action = "New MergeTarget module; merge_into_status gains no-local-target and a hint; tree_status resolves its target; dry run, tests, guide, tutorial 7, AdditionalSpecs updated."
+recorded_at = "2026-11-11T11:41:23.627915+00:00"
+state_before = ""
+state_after = "state(cfd16a12806851fdd9e98e0ed0abe68443879890cc4fd5de04c4738d2f41f42f)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Ticket steps 1-5 followed, ceilings kept by a new module; origin/main refusal rides the no-target plan instead of before any plan (accepted, same effect)."
+
+[conformity.gating]
+score = 33.0
+basis = "asserted"
+reasoning = "lint, 2723 tests, check-spectree, check-ceilings, status errors=0 all pass; nothing written by the dry run."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "New tests fail on the old code (6 of 7 do) and pass now; small deductions for a memory remote-only target now refused and a long one-line merge_base call."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
