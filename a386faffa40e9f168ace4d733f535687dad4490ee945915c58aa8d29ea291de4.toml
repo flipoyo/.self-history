@@ -1,0 +1,43 @@
+ticket = "VersionScheme"
+goal = "Make a project's version one class of cgitsync that reads and interprets it, with no free-standing function, following the rules by the book."
+action = "ProjectVersion folded into VersionScheme (read, MANIFEST); callers repointed; _repo_path became VersionOperation._repo_dir; project_version ceiling row and legacy alias removed; read tests added; bump-build then patch 8.9.1."
+recorded_at = "2026-11-11T13:35:52.964024+00:00"
+state_before = ""
+state_after = "state(104327082c8be1d2f73f36484354643ef23813028d442b339169828cdeec3c9c)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "92 = 31 + 31 + 31, maxima 33, 33, 34."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "One class owns read and interpretation, no module-level domain function, digest and specs updated; no stale references; small loss: the early legacy alias removal was not noted in the user guide."
+
+[conformity.gating]
+score = 31.0
+basis = "asserted"
+reasoning = "lint, check-spectree, check-ceilings, check-oo, status errors=0 and full test 2780 passed all re-run green; ceilings unchanged beyond the owner's raises; one loss: the work reached a commit with the TreeVersion work in one message."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Tests fail when read regresses (mutation on the workspace-first order caught by 4 tests); clean rename to _repo_dir; the legacy alias removal is judged acceptable but is an unrecorded public-looking change."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
