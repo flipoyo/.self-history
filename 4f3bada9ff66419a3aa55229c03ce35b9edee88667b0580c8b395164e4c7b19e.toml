@@ -1,0 +1,40 @@
+ticket = "AnonymousProject"
+goal = "A project may name itself by an alias in every repository it shares, so its real name never reaches a shared repository"
+action = "Worker built ProjectAlias, the anonymous project option, claim stamps, alias resolution, anonymous States and cgitsync anonymise. Orchestrator found three blocking defects over three rounds (alias-shape refusal on ordinary projects, anonymise on remote-only branches, source_cgs_path leaking the real name in child repository States); all fixed and re-quoted. Released as 8.11.0."
+recorded_at = "2026-11-21T02:22:00.593838+00:00"
+state_before = ""
+state_after = "state(18b977352b9a59ef69200aec2b1da56412472a1b7eb29b82fff2f594013b697c)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "Eight steps done after fixes; one earlier violation of the unchanged-without-option rule and a State leak were caught by the orchestrator, not the worker; four known limits left and recorded."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, test 2843 passed, check-ceilings, check-oo, check-spectree and status errors=0 all green at the end."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Real-repository integration tests grep every shared repository; remaining non-blocking defects: prefix match, staged files at stamp, detached HEAD, dirty worktree checkout; Q5(b) impossible for released versions."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
