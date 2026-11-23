@@ -1,0 +1,43 @@
+ticket = "ProjectBranch4Parent"
+goal = "A nested Parent, and what its own spec declares, is on <project>_<branch> instead of the project's bare branch, so one Parent can be combined into several projects."
+action = "Reviewed the worker's change against the eight steps and the ticket: MountGuard.is_parent and follows_parent, behind_gate generalised, Q5 fallback reported in install and status, Q6 explicit branch wins; twelve new integration tests; seven ceilings raised with the owner's approval; version bumped to 8.10.0, docs PDFs rebuilt."
+recorded_at = "2026-11-23T17:44:54.864314+00:00"
+state_before = ""
+state_after = "state(65ef86bd8b7eaba131057ff2b6ca78d5c4c1d711aca9bf7ee07cd114e8ffd443)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "31+30+31=92 of 100; no blocking defect."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Single resolver kept, no new public symbol, specs and digest and user guide updated, owner answers followed; the Q5 report text in status is appended inline rather than in its own structure."
+
+[conformity.gating]
+score = 30.0
+basis = "asserted"
+reasoning = "Lint, 2803 tests, check-ceilings and check-spectree pass; commit and push stay refused by Preflight's branch alignment; no public record touched."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Tests cover tree, install, status, checkout, close and merge; a module-level spec cache in mount_guard.py and the discovery pin condition are dense but bounded."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
