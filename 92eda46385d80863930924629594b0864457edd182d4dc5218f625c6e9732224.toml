@@ -1,0 +1,38 @@
+ticket = "DevWorkspaceNesting"
+goal = "pixi run install -s -dev-4X must create the workspace at the destination itself, not one folder deeper (default cawaqs-dev-<branch>-<timestamp>; -d DIR is the cawaqs root, empty or missing)"
+action = "Worker split the destination into --cgs-path (dirname) and bootstrap name (basename) in install.sh dev_install, updated header, usage and README. Orchestrator re-ran bash -n, default and -d dry runs, edge cases (relative, trailing slash, missing parent, '/'), grepped for stale CGSPATH/cawaqs wording (none), bumped 4.1.1 -> 4.1.2 (patch: a script's behaviour changed, outside src/), no PDFs (cawaqs has none), no real install run."
+recorded_at = "2026-11-23T14:27:53.065707+00:00"
+state_before = ""
+state_after = "state(d7fcb993c01af57d1a88aef941bc4c6168b9d273409251327468af9b99ac9db9)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-code-worker"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 32.0
+basis = "asserted"
+reasoning = "Eight steps quoted; steps 1,2,5,6,7 not applicable (no src, no lint/test task, no docs, no CLI command); one over-long header comment line and the ticket D2 text edited by the worker (owner answers match)."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "bash -n ok, dry runs ok, check-version ok at 4.1.2, cgitsync status errors=0; no real install could be run, so end-to-end bootstrap is unmeasured."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Edge cases hold (relative, trailing slash, missing parent, '/' refused). Non-empty DIR is left to cgitsync bootstrap to refuse; install.sh makes the parent before that and does not check upfront."
+
+[checks]
+status_errors = 0
