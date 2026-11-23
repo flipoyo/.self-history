@@ -1,0 +1,43 @@
+ticket = "RootBareBranch"
+goal = "Only the root is on the project's bare branch; every other repository that is not private takes <project>_<branch>, in DEV and USER trees."
+action = "Generalised behind_gate and GitTreeBranches.guest, pinnable and the topology check; migrated fixtures; specs, digest, user guide and .cgs comments. Orchestrator removed dead MountGuard.follows_parent and its stale spec mention. Version 8.11.0."
+recorded_at = "2026-11-23T19:37:34.157245+00:00"
+state_before = ""
+state_after = "state(d452f1cbcb940097419e1a477bf9bd8d72ec55e39dc6c7548cd60c2ea0db5711)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "92/100: 29 of 33 spec, 33 of 33 gating, 30 of 34 quality."
+
+[conformity.spec_respect]
+score = 29.0
+basis = "asserted"
+reasoning = "Rule, pins, legend, specs followed; USER-tree info: line (ticket 3.8, Q2) is promised in AdditionalSpecs but not implemented; follows_parent left dead."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint, 2810 tests, check-spectree, check-ceilings, check-tickets and status errors=0 all pass; bump-build done, no self-scoring."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Fixtures migrated faithfully, none weakened; new tests cover the main paths but not tag leaf, USER info, status json, commit refusal or ancestors."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
