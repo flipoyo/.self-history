@@ -1,0 +1,43 @@
+ticket = "BranchMissingEventName"
+goal = "A repository waiting for its branch is logged as branch_missing with scope and root, not private_branch_missing, and the install closes with one block and one command line."
+action = "Reviewed the worker's change: event and client attribute renamed, closing block grouped by command with push in a DEV tree, status prints the command once, private/local repositories get the same tree-wide command; four integration tests updated, three added; memory_prompt LOC ceiling raised to 158 by the owner. Version 8.12.0, docs PDFs rebuilt."
+recorded_at = "2026-11-24T19:57:33.793889+00:00"
+state_before = ""
+state_after = "state(50c41e31e92afd4897dc963cd3d811ab9dc980091106c949ec4f7fd22d9bfafa)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Opus 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Opus 5.5"
+
+[conformity]
+explanation = "33+33+34, less 2 for two documentation gaps the ticket named, less 4 for small code-quality points; no blocking defect: 31+33+30=94 of 100."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Lint, tests, status errors=0, bump-build, specs, guide and changelog all done; less 2: the guide's memory-branch paragraph (ticket 3.6) not refreshed, and ticket 3.3 claims a --json detail no command prints."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "Only declared writable repositories changed, nothing pushed, nothing private in the public CHANGELOG, guide or tests."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Sound and well tested; less 4: dead command-is-None branch in the closing block, a hint string now counted in status --json warnings, '1 repository has no branch of their own', a dense one-line dict in client.py."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
