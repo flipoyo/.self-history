@@ -1,0 +1,39 @@
+ticket = "BuildSemVerAgenticC"
+goal = "CaWaQS one SemVer in C, libprint 1.25, private versioning.py, scripts 1.0.0 with -p/-b, cawaqs 4.2.0 then 4.3.0"
+action = "Orchestrated: quoted work against the eight steps, ran both bump-version minor, check-version, build, re-quoted the install-script fix and archived the ticket"
+recorded_at = "2026-11-25T00:36:54.324793+00:00"
+state_before = ""
+state_after = "state(0766856626c2215546de04af0bebf92bee59dcdececcf5df0f7120b664f8547f)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity.spec_respect]
+score = 28.0
+basis = "asserted"
+reasoning = "Eight steps followed and read against the ticket; the -b NOPE acceptance is deferred until cawaqs_4X is merged on scripts main"
+
+[conformity.gating]
+score = 30.0
+basis = "asserted"
+reasoning = "No personal names or agent credit added; no main moved"
+
+[conformity.quality]
+score = 28.0
+basis = "measured"
+reasoning = "7 pytest pass, check-version ok at 4.3.0, build gives cawaqs4.3.0; scratch -b NOPE and CI not run by me"
+
+[checks]
+tests_passed = true
+status_errors = 0
