@@ -1,0 +1,43 @@
+ticket = "VersionFeatureTasks"
+goal = "version diagnose and bump find a bump-version or bump-build task declared in a Pixi feature and run it with -e, a script in an unmounted repository is not mounted, and the branch-naming rule is a documented contract whose change is a major bump."
+action = "Quoted the worker's change twice. VersionOperation._tasks reads [tasks] and every feature mapped through [environments] (list and table forms, no-default-feature), the first environment in order wins, VersionRow gains environment, _route passes -e to dry and real runs, new not mounted verdict refuses a bump; eleven integration tests including a real two-environment bump. User guide gains The branch-naming contract, a row in the stability table, and four passages point to it; Versioning.md MAJOR row, digest line and CHANGELOG updated. First quote found four non-blocking defects; three were fixed, the git_branch.py rewrap kept to stay under its ceiling. Version 8.13.1 (minor then a patch after the follow-up bump-build), docs PDFs rebuilt."
+recorded_at = "2026-11-25T00:32:39.877565+00:00"
+state_before = ""
+state_after = "state(b7750bc81374999e99d8eacc90cfcafb5823cbae897266253b7a8e549b6037ba)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Opus 5.5"
+
+[conformity]
+explanation = "33+33+34, less 1 for one cosmetic rewrap; no blocking defect at either quote: 33+33+33=99 of 100."
+
+[conformity.spec_respect]
+score = 33.0
+basis = "asserted"
+reasoning = "R1 and R2 built as the owner answered Q1 to Q5, every acceptance case tested, stability table and Versioning.md agree."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint, 2823 tests, check-spectree, check-ceilings and status errors=0 all pass, re-run by the orchestrator; bump-build ran and was followed by bump-version."
+
+[conformity.quality]
+score = 33.0
+basis = "asserted"
+reasoning = "Clear helpers and tests after the fixes; less 1 for a reflowed docstring paragraph in git_branch.py, needed only to stay under its ceiling."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
