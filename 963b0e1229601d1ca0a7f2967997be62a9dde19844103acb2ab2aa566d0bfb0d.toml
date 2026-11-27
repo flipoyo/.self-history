@@ -1,0 +1,43 @@
+ticket = "MergeDataEncrypt"
+goal = "Merge the data-encrypt line (git-crypt guard, anonymous projects) into HT-BETA in every repository, prove the five feature pairs, fold in EncryptedMerge E3, release as one version."
+action = "Re-quoted after the worker fixed my three findings and the git-crypt binary became available: full suite 3040 passed with the encrypted tests running, all gates green, version 8.16.0 kept. This record corrects the earlier one."
+recorded_at = "2026-11-27T14:59:20.717979+00:00"
+state_before = ""
+state_after = "state(5916123ff6fa10808b9ea09de3bfb00d31523781a017b59b8e8529b0b4ae3748)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "95 of 100 (31 of 33 spec respect, 32 of 33 gating, 32 of 34 quality); corrects the earlier record of 89."
+
+[conformity.spec_respect]
+score = 31.0
+basis = "measured"
+reasoning = "Stale data-encrypt references and the missing remote-join test were fixed after the first quote; the merge itself lost no hunk and raised exactly five ceilings."
+
+[conformity.gating]
+score = 32.0
+basis = "measured"
+reasoning = "Lint, ceilings, oo, spectree, tickets, status errors=0 and 3040 tests pass with the git-crypt tests and both EncryptedMerge integration tests run; the worker only found the eight old-assumption failures after the owner installed the program."
+
+[conformity.quality]
+score = 32.0
+basis = "asserted"
+reasoning = "Clean E3 class, 20 pair tests, the composition now tested both ways and the real-program conflict tests in place."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0

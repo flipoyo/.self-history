@@ -1,0 +1,43 @@
+ticket = "MergeDataEncrypt"
+goal = "Merge the data-encrypt line (git-crypt guard, anonymous projects) into HT-BETA in every repository, prove the five feature pairs, fold in EncryptedMerge E3, release as one version."
+action = "Quoted the uncommitted merge against the eight steps, ran every gate and the full suite twice, checked the five ceiling raises and the composed create_global_branch, bumped the tree to 8.16.0 and rebuilt the PDFs."
+recorded_at = "2026-11-27T14:42:03.233154+00:00"
+state_before = ""
+state_after = "state(5916123ff6fa10808b9ea09de3bfb00d31523781a017b59b8e8529b0b4ae3748)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity]
+explanation = "89 of 100 (30 of 33 spec respect, 29 of 33 gating, 30 of 34 quality)."
+
+[conformity.spec_respect]
+score = 30.0
+basis = "measured"
+reasoning = "No lost data-encrypt hunk, exactly five ceilings raised to measured values, composition correct; but the devel test spec still mounts the data-encrypt branch and stale comments name old paths."
+
+[conformity.gating]
+score = 29.0
+basis = "measured"
+reasoning = "Lint, ceilings, oo, spectree, tickets, status errors=0 and 3024 tests pass; the 15 git-crypt tests and the two EncryptedMerge integration tests were never run, git-crypt being absent."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Clean E3 class with data carried on the outcome and 20 pair tests; the claim not stamped for a branch joined from the remote has no test."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
