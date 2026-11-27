@@ -1,0 +1,40 @@
+ticket = "CheckoutBareTip"
+goal = "A derived branch begins at the bare branch's tip, a landed name never pins a repository, and checkout refuses a close misspelling of an existing branch."
+action = "Worker added BranchSpelling and NewBranch, rerouted create_global_branch, changed _declared_pin, fixed the build-change warning for origin-only branches; orchestrator quoted, bumped 8.15.0, rebuilt PDFs."
+recorded_at = "2026-11-27T13:44:50.417316+00:00"
+state_before = ""
+state_after = "state(003470cee12ee46ec9d7928bc9bbeb23fe9b699f113a82ae6928f510eedc7fc2)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity.spec_respect]
+score = 30.0
+basis = "measured"
+reasoning = "Owner decisions asked first, no ceiling raised, new logic in two new modules, digest and AdditionalSpecs updated; fetch in refuse_misspelt departs from the ticket's no-extra-Git-call line and is left for the owner (-3)."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, full test (2957 passed), check-ceilings, check-oo, check-spectree and status errors=0 all pass after bump; two docs-version tests failed before the bump for a pre-existing reason (-2)."
+
+[conformity.quality]
+score = 30.0
+basis = "asserted"
+reasoning = "Clean separation and integration test on real remotes; typed() strips any underscore prefix rather than the project's, so a legacy name like release_1 yields a candidate 1 (-4)."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
