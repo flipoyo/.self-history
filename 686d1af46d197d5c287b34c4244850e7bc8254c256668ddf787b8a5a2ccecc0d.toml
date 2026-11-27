@@ -1,0 +1,40 @@
+ticket = "NestedInstall"
+goal = "A nested .cgs can declare the ComplexGitSync running initialise, auto warns when a spec sits in .config/, and the environment keys are documented."
+action = "Orchestrated and re-quoted the worker's RunningInstall adoption, NestedHint warnings and docs; ran every gate and the full suite; chose patch 8.16.1."
+recorded_at = "2026-11-27T16:24:42.340405+00:00"
+state_before = ""
+state_after = "state(612c0ca5544e6143a96ccc736287575a5090c8483a482404248a9c01d05c2216)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "claude-sonnet-5-5"
+
+[conformity.spec_respect]
+score = 30.0
+basis = "asserted"
+reasoning = "Pair rule, owner answers D1-D5, digest lines and moved specs respected; Ring-0 predicate placed in orchestre by a stated reason; 3 non-blocking edges left."
+
+[conformity.gating]
+score = 33.0
+basis = "measured"
+reasoning = "lint, check-ceilings, check-oo, check-spectree, check-tickets pass; no ceiling raised; full test 3067 passed 2 skipped; status errors=0."
+
+[conformity.quality]
+score = 29.0
+basis = "asserted"
+reasoning = "Adoption is safe at every clone path; holds() matches an ancestor entry, the status hint cannot tell an empty explicit spec from auto, and the tool declared without private is reported off-target."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
