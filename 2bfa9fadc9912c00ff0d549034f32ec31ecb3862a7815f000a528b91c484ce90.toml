@@ -1,0 +1,40 @@
+ticket = "EncryptedRepos"
+goal = "Refuse to commit or push a file in clear under a git-crypt path, and show the encryption state in status."
+action = "Added GitCrypt, EncryptionGuard hooks in commit, push and release freeze, a CRYPT status column and crypt JSON field, an install notice, docs and tests. E3 merge left to its own ticket."
+recorded_at = "2026-11-21T00:43:55.538497+00:00"
+state_before = ""
+state_after = "state(59caa4d170cf2bd747582b95c3301ef9b5da450eb375f07438e17a9aa6f6bd88)"
+contract = "96ab29ae5d1e49e5fc074842d6133e82d56e44d4afb93f653f0d19713914e8cf"
+repos_written = []
+pushed = false
+pushed_reason = ""
+
+[worker]
+role = "Dev"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[orchestrator]
+role = "Orchestration"
+vendor = "Anthropic"
+model = "Claude Sonnet 5.5"
+
+[conformity.spec_respect]
+score = 31.0
+basis = "asserted"
+reasoning = "Rings, ceilings with owner raises, docs and CLI/API mirroring respected; two new-module imports to ring 4 are within rules; an unrelated untracked ticket pair sits in .dev."
+
+[conformity.gating]
+score = 31.0
+basis = "measured"
+reasoning = "lint, 2812 tests with git-crypt, check-ceilings, check-oo, check-spectree and status errors=0 all pass; check-tickets fails only on 32 earlier tickets lacking a record."
+
+[conformity.quality]
+score = 31.0
+basis = "asserted"
+reasoning = "Edge cases probed: spaces, non-ASCII, empty file, no upstream all correct; status probes every tracked file per repository, a cost on very large repositories."
+
+[checks]
+lint_passed = true
+tests_passed = true
+status_errors = 0
